@@ -2,7 +2,7 @@
 
 
 # Visuomotor Adaptation Strategy
-Please use, cite, and contribute to Social Distance App! If you have questions, please submit them via the [GitHub issue page](https://github.com/jiayinghsu/visuomotor_adaptation_strategy/issues). 
+Please use, cite, and contribute to Visuomotor Adaptation Strategy! If you have questions, please submit them via the [GitHub issue page](https://github.com/jiayinghsu/visuomotor_adaptation_strategy/issues). 
 ***
 
 ## Introduction 
@@ -28,7 +28,7 @@ I thank Richard Ivry, Ken Nakayama, and Jonathan Tsay for their collaboration an
 
 ## Issues 
 
-Please file any Social Distance App suggestions/issues/bugs via our 
+Please file any Visuomotor Adaptation Strategy suggestions/issues/bugs via our 
 [GitHub issues page](https://github.com/jiayinghsu/visuomotor_adaptation_strategy/issues). Please check to see if any related 
 issues have already been filed.
 
