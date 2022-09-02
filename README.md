@@ -1,1 +1,1 @@
-# action_selection_strategy
+# adaptation_strategy
