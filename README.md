@@ -14,7 +14,9 @@ To study this, I designed a dual-task paradigm that combines **motion tacking** 
 ## Video Demo
 
 ## Experimental Setup
-![Experimental setup](https://github.com/jiayinghsu/visuomotor_adaptation_strategy/blob/main/experimental_setup.png)
+Motion Tracking             |  Eye Tracking
+:-------------------------:|:-------------------------:
+![](https://github.com/jiayinghsu/visuomotor_adaptation_strategy/blob/main/experimental_setup.png)  |  ![](https://github.com/jiayinghsu/visuomotor_adaptation_strategy/blob/main/eye_tracker.jpeg)
 
 ## Stimulus Sequence
 ![Stimulus sequence](https://github.com/jiayinghsu/visuomotor_adaptation_strategy/blob/main/stimulus_sequence.png)
