@@ -1,0 +1,137 @@
+---
+title: "R Notebook"
+output: html_notebook
+
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+LOAD LIBRARIES
+```{r}
+rm(list = ls())
+source("/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Functions/r_functions.R")
+call_libraries()
+text_size <- 22
+options(digits = 2)  
+```
+
+THEME SETTING
+```{r}
+th <- theme(   panel.grid.major = element_blank(),
+               panel.grid.minor = element_blank(),
+               panel.border = element_blank(),
+               panel.background = element_blank(),
+               axis.line = element_line(size = 0.5), 
+               legend.position = 'right', 
+               legend.text = element_text(size= text_size, family="Helvetica"),
+               text = element_text(size= text_size, family="Helvetica"), 
+               strip.text.x = element_text(size = rel(0.90)), 
+               strip.text.y = element_text(size = rel(0.90)), 
+               axis.text.x = element_text(size = rel(0.85)),
+               axis.text.y = element_text(size = rel(0.85)),
+               axis.title.y = element_text(margin = margin(t = 0, r = 8, b = 0, l = 0), angle = 90), 
+               axis.title.x = element_text(vjust=-0.3), 
+               plot.title = element_text(hjust = 0.5, vjust = 0), 
+               axis.ticks.length=unit(0.25, "cm"), 
+               axis.ticks = element_line(size = 0.5))
+my.colors <-  c("#006600", "#800080", "#FF9900", 'deepskyblue4')
+```
+
+CONCATENATE DATAFILES
+#############################
+CONCATENATE GAZE DATAFILES
+#############################
+```{r}
+library(visdat)
+
+gaze_baseline <- read.csv('/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Analyze/CSV_May3/gaze/May3_baseline.csv', header=TRUE, sep=",")
+gaze_rot1 <- read.csv('/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Analyze/CSV_May3/gaze/May3_rot1.csv', header=TRUE, sep=",")
+gaze_rot2 <- read.csv('/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Analyze/CSV_May3/gaze/May3_rot2.csv', header=TRUE, sep=",")
+gaze_rot3 <- read.csv('/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Analyze/CSV_May3/gaze/May3_rot3.csv', header=TRUE, sep=",")
+gaze_rot4 <- read.csv('/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Analyze/CSV_May3/gaze/May3_rot4.csv', header=TRUE, sep=",")
+gaze_rot5 <- read.csv('/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Analyze/CSV_May3/gaze/May3_rot5.csv', header=TRUE, sep=",")
+gaze_washout <- read.csv('/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Analyze/CSV_May3/gaze/May3_washout.csv', header=TRUE, sep=",")
+
+gaze_rot2$event <- gaze_rot2$event + 60
+gaze_rot3$event <- gaze_rot3$event + 120
+gaze_rot4$event <- gaze_rot4$event + 180
+gaze_rot5$event <- gaze_rot5$event + 240 
+
+gaze_rot <- rbind(gaze_rot1, gaze_rot2, gaze_rot3, gaze_rot4, gaze_rot5)
+gaze_rot$phase <- 1
+gaze_rot <- gaze_rot[which(gaze_rot$on_surf == 'True'),]
+
+
+```
+
+RELATIVIZE TIMESTAMPS 
+
+```{r}
+
+num.trial <- max(unique(gaze_rot$event), na.rm = TRUE)
+gaze_rot <- gaze_rot %>% filter(confidence >= 0.8) %>% drop_na
+targets <- unique (gaze_rot$target)
+targets <- targets[!is.nan(targets)]
+num.tar <- length (targets)
+
+#sum = 0
+for(n in 1:num.trial){
+  base <- gaze_rot[which(gaze_rot$event == n),]$world_timestamp[1]
+  gaze_rot[which(gaze_rot$event == n),]$world_timestamp <- gaze_rot[which(gaze_rot$event == n),]$world_timestamp - base
+  #sum = sum + tail(rot[which(rot$event == n),]$world_timestamp, 1)
+}
+#gap = round(sum/num.trial)
+write.csv(gaze_rot,"/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Analyze/CSV_May3/gaze/May3_rotation.csv", row.names = FALSE)
+
+
+```
+
+#############################
+CONCATENATE FIXATION DATAFILES
+#############################
+```{r}
+
+fix_baseline <- read.csv('/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Analyze/CSV_May3/fixation/May3_fixation_baseline.csv', header=TRUE, sep=",")
+fix_rot1 <- read.csv('/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Analyze/CSV_May3/fixation/May3_fixation_rot1.csv', header=TRUE, sep=",")
+fix_rot2 <- read.csv('/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Analyze/CSV_May3/fixation/May3_fixation_rot2.csv', header=TRUE, sep=",")
+fix_rot3 <- read.csv('/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Analyze/CSV_May3/fixation/May3_fixation_rot3.csv', header=TRUE, sep=",")
+fix_rot4 <- read.csv('/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Analyze/CSV_May3/fixation/May3_fixation_rot4.csv', header=TRUE, sep=",")
+fix_rot5 <- read.csv('/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Analyze/CSV_May3/fixation/May3_fixation_rot5.csv', header=TRUE, sep=",")
+fix_washout <- read.csv('/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Analyze/CSV_May3/fixation/May3_fixation_washout.csv', header=TRUE, sep=",")
+
+fix_rot1$event <- fix_rot1$event + 36
+fix_rot2$event <- fix_rot2$event + 36 + 60
+fix_rot3$event <- fix_rot3$event + 36 + 120
+fix_rot4$event <- fix_rot4$event + 36 + 180
+fix_rot5$event <- fix_rot5$event + 36 + 240 
+fix_washout$event <- fix_washout$event + 36 + 300 
+
+fix_total <- rbind(fix_baseline, fix_rot1, fix_rot2, fix_rot3, fix_rot4, fix_rot5, fix_washout)
+fix_total$phase <- 1
+fix_total <- fix_total[which(fix_total$on_surf == 'True'),]
+
+
+```
+
+RELATIVIZE TIMESTAMPS 
+
+```{r}
+
+num.trial <- max(unique(fix_total$event), na.rm = TRUE)
+fix_total <- fix_total %>% drop_na
+targets <- unique (fix_total$target)
+targets <- targets[!is.nan(targets)]
+num.tar <- length (targets)
+
+#sum = 0
+for(n in 1:num.trial){
+  base <- fix_total[which(fix_total$event == n),]$world_timestamp[1]
+  fix_total[which(fix_total$event == n),]$world_timestamp <- fix_total[which(fix_total$event == n),]$world_timestamp - base
+  #sum = sum + tail(rot[which(rot$event == n),]$world_timestamp, 1)
+}
+#gap = round(sum/num.trial)
+write.csv(fix_total,"/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Analyze/CSV_May3/fixation/May3_fixation_total.csv", row.names = FALSE)
+
+```
+

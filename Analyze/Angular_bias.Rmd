@@ -1,0 +1,627 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+LOAD LIBRARIES
+```{r}
+rm(list = ls())
+source("/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Functions/r_functions.R")
+call_libraries()
+text_size <- 22
+options(digits = 2) 
+```
+
+THEME SETTING
+```{r}
+th <- theme(   panel.grid.major = element_blank(),
+               panel.grid.minor = element_blank(),
+               panel.border = element_blank(),
+               panel.background = element_blank(),
+               axis.line = element_line(size = 0.5), 
+               legend.position = 'right', 
+               legend.text = element_text(size= text_size, family="Helvetica"),
+               text = element_text(size= text_size, family="Helvetica"), 
+               strip.text.x = element_text(size = rel(0.90)), 
+               strip.text.y = element_text(size = rel(0.90)), 
+               axis.text.x = element_text(size = rel(0.85)),
+               axis.text.y = element_text(size = rel(0.85)),
+               axis.title.y = element_text(margin = margin(t = 0, r = 8, b = 0, l = 0), angle = 90), 
+               axis.title.x = element_text(vjust=-0.3), 
+               plot.title = element_text(hjust = 0.5, vjust = 0), 
+               axis.ticks.length=unit(0.25, "cm"), 
+               axis.ticks = element_line(size = 0.5))
+my.colors <-  c("#006600", "#800080", "#FF9900", 'deepskyblue4')
+```
+
+LOAD AND CLEAN THE FIXATION DATASET 
+
+```{r}
+
+fixation = read.csv('/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Analyze/CSV_April28/fixation/April28_fixation_total.csv')
+
+num_trial = unique(fixation$event)
+
+for(i in num_trial){
+  idx = fixation$event == i
+  fixation$RT[idx] = fixation$world_timestamp[idx] - unique(fixation$RT[idx])
+}
+
+fixation$x_cent <- fixation$norm_pos_x - 0.5
+fixation$y_cent <- fixation$norm_pos_y - 0.5
+
+fixation$radius <- sqrt(fixation$x_cent^2 + fixation$y_cent ^2)
+fixation$theta <-  atan2(fixation$y_cent, fixation$x_cent) * ( 180 / pi ) 
+fixation$theta <- fixation$theta - fixation$target
+fixation$theta[fixation$theta < -180] <- fixation$theta[fixation$theta < -180] + 360
+
+initial_fix <- fixation[which(fixation$RT < 0),]
+
+```
+
+ADD SEQUENCE 
+```{r}
+
+total_trials <- initial_fix$event
+initial_fix$sequence <- NA
+
+for(i in total_trials){
+  len <- nrow(initial_fix[which(initial_fix$event == i),])
+  initial_fix[which(initial_fix$event == i),]$sequence <- -(len-1): 0
+}
+
+```
+
+
+PLOT HISTOGRAMS
+```{r}
+targets <- unique (initial_fix$target)
+targets <- targets[!is.nan(targets)]
+num.tar <- length (targets)
+
+for(ti in 1:num.tar){
+  tarplot <-  initial_fix %>% drop_na %>% filter(target == targets[ti]) %>% filter(sequence >= -3) %>%
+  ggplot(aes(x = x_cent, y = y_cent)) +
+  stat_density_2d(aes(fill = ..density..), geom = "raster", contour = FALSE) +
+  scale_fill_distiller(palette=1, direction=-1) +
+  annotate('segment', y = -0.25, yend = 0.25, x = 0, xend = 0, color = 'grey') +
+  annotate('segment', y = 0, yend = 0, x = -0.25, xend = 0.25, color = 'grey') +
+  ylim(-0.25, 0.25) +
+  xlim(-0.25, 0.25) + 
+  facet_wrap(.~sequence, nrow = 2) + 
+  ggtitle(targets[ti])
+ 
+ print(tarplot)
+}
+
+```
+
+CALCULATE ANGULAR BIAS
+```{r}
+fix1 <- read.csv('/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Analyze/CSV_April28/fixation/April28_fixation_total.csv')
+fix_baseline1 <- fix1[which(fix1$event <= 36),]
+
+fix2 <- read.csv('/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Analyze/CSV_April29/fixation/April29_fixation_total.csv')
+fix_baseline2 <- fix2[which(fix2$event <= 36),]
+
+fix3 <- read.csv('/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Analyze/CSV_April30/fixation/April30_fixation_total.csv')
+fix_baseline3 <- fix3[which(fix3$event <= 36),]
+
+fix4 <- read.csv('/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Analyze/CSV_May1/fixation/May1_fixation_total.csv')
+fix_baseline4 <- fix4[which(fix4$event <= 36),]
+
+fix5 <- read.csv('/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Analyze/CSV_May2/fixation/May2_fixation_total.csv')
+fix_baseline5 <- fix5[which(fix5$event <= 36),]
+
+fix6 <- read.csv('/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Analyze/CSV_May3/fixation/May3_fixation_total.csv')
+fix_baseline6 <- fix6[which(fix6$event <= 36),]
+
+fix_baseline1$seq <- fix_baseline1$event
+fix_baseline2$seq <- fix_baseline2$event + 36
+fix_baseline3$seq <- fix_baseline3$event + 36*2
+fix_baseline4$seq <- fix_baseline4$event + 36*3
+fix_baseline5$seq <- fix_baseline5$event + 36*4
+fix_baseline6$seq <- fix_baseline6$event + 36*5
+
+fix_baseline <- rbind(fix_baseline1, fix_baseline2, fix_baseline3, fix_baseline4, fix_baseline5, fix_baseline6)
+
+fix_baseline$x_cent <- fix_baseline$norm_pos_x - 0.5
+fix_baseline$y_cent <- fix_baseline$norm_pos_y - 0.5
+
+fix_baseline$radius <- sqrt(fix_baseline$x_cent^2 + fix_baseline$y_cent ^2)
+fix_baseline$theta <-  atan2(fix_baseline$y_cent, fix_baseline$x_cent) * ( 180 / pi ) 
+fix_baseline$theta <- fix_baseline$theta - fix_baseline$target
+fix_baseline$theta[fix_baseline$theta < -180] <- fix_baseline$theta[fix_baseline$theta < -180] + 360
+
+
+
+
+```
+
+PLOT THE AGULAR BIAS
+```{r}
+fix_baseline <- fix_baseline %>% drop_na 
+num_trial = unique(fix_baseline$seq)
+bias_summary <-  setNames(as.data.frame(matrix(0, ncol = 5, nrow = 162)), 
+                            c("TN", "Eye_angle", "Ave_angle", "SD", "Target"))
+bias_summary$TN <- num_trial
+
+for(i in num_trial){
+  idx = fix_baseline$event == i
+  fix_baseline$RT[idx] = fix_baseline$world_timestamp[idx] - unique(fix_baseline$RT[idx])
+}
+
+for(i in num_trial){
+  idy = bias_summary$TN == i 
+  fix_list <- fix_baseline[which(fix_baseline$RT < 0 & fix_baseline$seq == i),]
+  last_fix <- tail(fix_list$theta,1)
+  if(length(last_fix != 0)){
+     bias_summary$Eye_angle[idy] <- last_fix
+     bias_summary$Target[idy] <- fix_list[which(fix_list$theta == last_fix),]$target
+  }
+}
+
+bias_sd <- bias_summary %>% data_summary_med(varname = 'Eye_angle', groupnames = c('Target'))
+
+ggplot(bias_sd) +
+    geom_bar( aes(x=Target, y=Eye_angle, fill=Target), stat="identity",  alpha=0.7) +
+    geom_errorbar( aes(x=Target, ymin=Eye_angle-sd, ymax=Eye_angle+sd), width=0.4, colour="gray", alpha=0.9, size=1.3) + 
+  labs(y = "Eye Bias") + 
+  scale_x_continuous("Target", labels = as.character(bias_sd$Target), breaks = bias_sd$Target) 
+  
+```
+
+HAND BIAS
+```{r}
+hand1 <- read.csv("/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Analyze/CSV_May3/EXP1_V1_SUB1.csv", header=T, sep=",")
+hand2 <- read.csv("/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Analyze/CSV_May2/EXP1_V1_SUB1.csv", header=T, sep=",")
+hand3 <- read.csv("/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Analyze/CSV_May1/EXP1_V1_SUB1.csv", header=T, sep=",")
+hand4 <- read.csv("/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Analyze/CSV_April30/EXP1_V1_SUB1.csv", header=T, sep=",")
+hand5 <- read.csv("/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Analyze/CSV_April29/EXP1_V1_SUB1.csv", header=T, sep=",")
+hand6 <- read.csv("/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Analyze/CSV_April28/EXP1_V1_SUB1.csv", header=T, sep=",")
+
+hand1$seq <- hand1$TN
+hand2$seq <- hand2$TN + 36
+hand3$seq <- hand3$TN + 36*2
+hand4$seq <- hand4$TN + 36*3
+hand5$seq <- hand5$TN + 36*4
+hand6$seq <- hand6$TN + 36*5
+
+hand_total <- rbind(hand1, hand2, hand3, hand4, hand5, hand6)
+
+hand_total$hand <- hand_total$hand_theta
+targets <- unique(hand_total$ti)
+num.tar <- length(targets)
+num.sub <- length(unique(hand_total$SN))
+
+for (si in 1:num.sub){
+  for(tar in 1:num.tar){
+    idx <- hand_total$SN == si & hand_total$ti == targets[tar] 
+    hand_mean <- mean(hand_total$hand[idx], na.rm = TRUE)
+    print(hand_mean)
+    
+    idx_ti <- hand_total$SN == si & hand_total$ti == targets[tar]
+    hand_total$hand[idx_ti] <- hand_total$hand[idx_ti] #- hand_mean
+  }
+}
+
+hand_bias <- hand_total %>% data_summary_med(varname = 'hand', groupnames = c('ti'))
+
+names(hand_bias)[1] <- 'Target'
+names(hand_bias)[2] <- 'Bias'
+hand_bias$Type <- 'Hand'
+
+names(bias_sd)[2] <- 'Bias'
+bias_sd$Type <- 'Eye'
+
+bias_total <- rbind(hand_bias, bias_sd)
+
+ggplot(bias_total) +
+    geom_bar( aes(x=Target, y=Bias, fill=Type), stat="identity",  alpha=0.7) +
+    scale_fill_manual(values = c( 'steelblue', 'darkred'))
+
+#geom_errorbar( aes(x=Type, ymin=Bias-sd, ymax=Bias+sd), width=0.4, colour="gray", alpha=0.9, size=1.3) +
+#facet_wrap(.~Target, nrow = 1) + 
+
+
+```
+
+FREQUENCY/PROPORTION DATASET
+```{r}
+freq1 = read.csv('/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Analyze/CSV_April28/fixation/April28_fixation_total.csv')
+freq2 = read.csv('/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Analyze/CSV_April29/fixation/April29_fixation_total.csv')
+freq3 = read.csv('/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Analyze/CSV_April30/fixation/April30_fixation_total.csv')
+freq4 = read.csv('/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Analyze/CSV_May1/fixation/May1_fixation_total.csv')
+freq5 = read.csv('/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Analyze/CSV_May2/fixation/May2_fixation_total.csv')
+freq6 = read.csv('/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Analyze/CSV_May3/fixation/May3_fixation_total.csv')
+
+freq1 <- freq1[which(freq1$event > 36 & freq1$event <= 336),]
+freq1$Day <- 1
+freq1$Order <- freq1$event - 36
+freq2 <- freq2[which(freq2$event > 36 & freq2$event <= 336),]
+freq2$Day <- 2
+freq2$Order <- freq2$event -36 + 300
+freq3 <- freq3[which(freq3$event > 36 & freq3$event <= 336),]
+freq3$Day <- 3
+freq3$Order <- freq3$event -36 + 600
+freq4 <- freq4[which(freq4$event > 36 & freq4$event <= 336),]
+freq4$Day <- 4
+freq4$Order <- freq4$event -36 + 900
+freq5 <- freq5[which(freq5$event > 36 & freq5$event <= 336),]
+freq5$Day <- 5
+freq5$Order <- freq5$event -36 + 1200
+freq6 <- freq6[which(freq6$event > 36 & freq6$event <= 336),]
+freq6$Day <- 6
+freq6$Order <- freq6$event -36 + 1500
+
+freq_total <- rbind(freq1, freq2, freq3, freq4, freq5, freq6)
+
+num_trial = unique(freq_total$Order)
+
+for(i in num_trial){
+  idx = freq_total$Order == i
+  freq_total$RT[idx] = freq_total$world_timestamp[idx] - unique(freq_total$RT[idx])
+}
+
+freq_total$x_cent <- freq_total$norm_pos_x - 0.5
+freq_total$y_cent <- freq_total$norm_pos_y - 0.5
+
+freq_total$radius <- sqrt(freq_total$x_cent^2 + freq_total$y_cent ^2)
+freq_total$theta <-  atan2(freq_total$y_cent, freq_total$x_cent) * ( 180 / pi ) 
+freq_total$theta <- freq_total$theta - freq_total$target
+freq_total$theta[freq_total$theta < -180] <- freq_total$theta[freq_total$theta < -180] + 360
+
+initial_freq <- freq_total[which(freq_total$RT < 0),]
+
+total_trials <- initial_freq$Order
+initial_freq$sequence <- NA
+
+for(i in total_trials){
+  len <- nrow(initial_freq[which(initial_freq$Order == i),])
+  initial_freq[which(initial_freq$Order == i),]$sequence <- -(len-1): 0
+}
+
+```
+
+FREQUENCY/PROPORTION PLOT
+```{r}
+
+# define the range of areas for targat and aiming locations 
+radius_range <- 0.15 # desired radius in cm / 30.41
+theta_range <- 15
+target_radius <- 0.23
+rotation_size <- -75
+
+initial_freq <- initial_freq %>%
+  mutate(WithinTar = ifelse(abs(theta) <= theta_range & abs(radius - target_radius) < radius_range  ,TRUE, FALSE) ) %>%
+  mutate(WithinAim = ifelse( theta >= (-theta_range + rotation_size) & theta <= (theta_range + rotation_size) & abs(radius - 0.23) < radius_range  ,TRUE, FALSE) ) %>%
+  mutate(Between = ifelse( theta < -theta_range & theta > (theta_range + rotation_size) & abs(radius - 0.23) < radius_range  ,TRUE, FALSE) ) %>%
+  mutate(Start = ifelse( abs(radius) < radius_range ,TRUE, FALSE) ) %>%
+  mutate(WithinAimOpp = ifelse( theta >= (-rotation_size - theta_range)  & theta < (-rotation_size + theta_range) & abs(radius - 0.23) < radius_range  ,TRUE, FALSE) ) %>%
+  mutate(BetweenOpp = ifelse( theta > theta_range & theta < (-rotation_size - theta_range) & abs(radius - 0.23) < radius_range  ,TRUE, FALSE) ) %>%
+  mutate(LookLocation = ifelse(WithinTar == TRUE, 'Target', 
+                               ifelse(WithinAim == TRUE, 'Aim', 
+                                      ifelse(Between == TRUE, 'Between',
+                                            ifelse(Start == TRUE, 'Start', 
+                                                  ifelse(WithinAimOpp == TRUE, 'AimOpp',
+                                                         ifelse(BetweenOpp == TRUE, 'BetweenOpp','Other') ) )))))
+
+
+# WithinOpp = 60 to 90
+# BetweenOpp = 15 to 60
+# Target = -15 to + 15
+# Between = -15 to -60
+# Aim = -60 to -90
+# Start = within radius range, all angles
+# Other
+
+# initial_freq$LookLocation <- factor(initial_freq$LookLocation, levels = c('Start', 'Other','AimOpp','BetweenOpp', 'Target', 'Between', 'Aim'))
+
+initial_freq %>%
+  ggplot(aes(x = LookLocation)) + 
+  geom_histogram(stat = 'count')
+
+write.csv(initial_freq,"/Users/newxjy/Dropbox/VICE/JT/STRATEGY/Analyze/initial_freq.csv", row.names = FALSE)
+
+```
+
+
+```{r}
+
+ini_sum <- initial_freq %>%
+  mutate(Tally = 1) %>%
+  data_summary_count(varname = 'Tally', groupnames = c('Day', 'sequence', 'LookLocation') )
+
+initial_freq %>%
+  select('Day', 'sequence', 'LookLocation', 'event')
+
+#num_event <- nrow(ini_sum)
+ini_sum$Frequency <- NA
+datalist = list()
+
+for(di in 1:6){
+  dat <- ini_sum[which(ini_sum$Day == di),]
+  num_event <- nrow(dat)
+  for(si in 1:num_event){
+    dat$Frequency[si] <- dat$Tally[si] / sum(dat[which(dat$Day == di),]$Tally) * 100
+    datalist[[di]] <- dat 
+  }
+}
+
+big_data = do.call(rbind, datalist)
+
+ggplot(big_data) +
+  geom_bar( aes(x=sequence, y=Frequency, fill=LookLocation), stat="identity",  alpha=0.7) + 
+  facet_grid(LookLocation~Day) + 
+  labs(y = "Percentage (%)") + 
+  labs(x = "Fixation Sequence")
+
+
+sum(big_data[which(big_data$Day == 6),]$Frequency)
+sum(big_data[which(big_data$Day == 5),]$Frequency)
+sum(big_data[which(big_data$Day == 4),]$Frequency)
+sum(big_data[which(big_data$Day == 3),]$Frequency)
+sum(big_data[which(big_data$Day == 2),]$Frequency)
+sum(big_data[which(big_data$Day == 1),]$Frequency)
+
+
+```
+
+```{r}
+
+datalist2 = list()
+
+ini_sum2 <- ini_sum[which(ini_sum$sequence > -3),]
+ini_sum2$Type_freq <- NA
+
+
+for(di in 1:3){
+  dat2 <- ini_sum2[which(ini_sum2$sequence == (di-3)),]
+  sum_aim <- sum(dat2[which(dat2$LookLocation == 'Aim'),]$Tally)
+  sum_aimopp <- sum(dat2[which(dat2$LookLocation == 'AimOpp'),]$Tally)
+  sum_between <- sum(dat2[which(dat2$LookLocation == 'Between'),]$Tally)
+  sum_betweenopp <- sum(dat2[which(dat2$LookLocation == 'BetweenOpp'),]$Tally)
+  sum_other <- sum(dat2[which(dat2$LookLocation == 'Other'),]$Tally)
+  sum_start <- sum(dat2[which(dat2$LookLocation == 'Start'),]$Tally)
+  sum_target <- sum(dat2[which(dat2$LookLocation == 'Target'),]$Tally)
+  num_event <- nrow(dat2)
+  
+  for(si in 1:num_event){
+    if(dat2$LookLocation[si] == 'Aim'){
+      dat2$Type_freq[si] <- dat2$Tally[si] / sum_aim * 100
+    } else if(dat2$LookLocation[si] == 'AimOpp'){
+      dat2$Type_freq[si] <- dat2$Tally[si] / sum_aimopp * 100
+    } else if(dat2$LookLocation[si] == 'Between'){
+      dat2$Type_freq[si] <- dat2$Tally[si] / sum_between * 100
+    } else if(dat2$LookLocation[si] == 'BetweenOpp'){
+      dat2$Type_freq[si] <- dat2$Tally[si] / sum_betweenopp * 100
+    } else if(dat2$LookLocation[si] == 'Other'){
+      dat2$Type_freq[si] <- dat2$Tally[si] / sum_other * 100
+    } else if(dat2$LookLocation[si] == 'Start'){
+      dat2$Type_freq[si] <- dat2$Tally[si] / sum_start * 100
+    } else if(dat2$LookLocation[si] == 'Target'){
+      dat2$Type_freq[si] <- dat2$Tally[si] / sum_target * 100
+    }
+    
+    datalist2[[di]] <- dat2 
+  }
+}
+
+big_data2 = do.call(rbind, datalist2)
+
+ggplot(big_data2) +
+  geom_bar( aes(x=sequence, y=Type_freq, fill=LookLocation), stat="identity",  alpha=0.7) + 
+  facet_grid(LookLocation~Day) + 
+  labs(y = "Percentage (%)") + 
+  labs(x = "Fixation Sequence")
+
+```
+
+
+```{r}
+tn <- unique(initial_freq$Order)
+uniquelist = list()
+for(si in tn){
+  idx <- initial_freq$Order == si
+  pattern = unique(initial_freq$LookLocation[idx])
+  print(list(pattern))
+  uniquelist <- append(uniquelist, list(pattern))
+}
+
+unique(uniquelist)
+
+trialtype <- setNames(as.data.frame(matrix(NaN, ncol = 3, nrow = 100000)), c('TN','Sequence', 'Tally'))
+
+for(si in tn){
+  idx <- initial_freq$Order == si
+  pattern = unique(initial_freq$LookLocation[idx])
+  trialtype$TN[si] <- si
+  trialtype$Sequence[si] <-  paste( unlist(pattern), collapse=', ')
+}
+
+trialtypecount <- trialtype %>% 
+  mutate(Tally = 1) %>%
+  data_summary_count(varname = 'Tally', groupnames = "Sequence") %>%
+  arrange(desc(Tally)) 
+  
+  
+trialtypecount <- trialtypecount[-c(1), ]
+trialtypecount <- trialtypecount %>%
+  mutate(perc = round(Tally / 1481, 2))
+
+```
+
+```{r}
+
+# Categorizing targets 
+c7 <- c("Start")
+c5 <- c("Start",   "Between")
+c11 <- c("Between")
+
+c1 <- c("Aim",    "Target")
+c2 <- c("Start",  "Target")
+c3 <- c("Start",  "Target", "Aim")   
+c4 <- c("Start", "Aim")  
+
+c6 <- c("Aim")
+
+c8 <- c("Target")
+c9 <- c("Other", "Start")
+c10 <- c("Other",   "Between")
+
+c12 <- c("Between", "Start",   "Aim")    
+c13 <- c("Between", "Aim")    
+c14 <- c("Opposite", "Start",    "Target",   "Aim")     
+c15 <- c("Other",  "Target", "Aim")   
+c16 <- c("Other",  "Target")
+c17 <- c("Target", "Start") 
+c18 <- c("Start",   "Target",  "Between")
+c19 <- c("Other",  "Start",  "Target")
+c20 <- c("Target", "Aim")   
+c21 <- c("Opposite", "Target")  
+c22 <- c("Target",  "Between")
+c23 <- c("Aim",   "Start")
+c24 <- c("Target", "Start",  "Aim")   
+c25 <- c("Start", "Other")
+c26 <- c("Other",   "Between", "Aim")    
+c27 <- c("Opposite", "Aim")     
+c28 <- c("Other", "Aim")  
+c29 <- c("Opposite", "Start")   
+c30 <- c("Start",   "Other",   "Between")
+c31 <- c("Other")
+c32 <- c("Between", "Target") 
+c33 <- c("Start",    "Opposite", "Target")  
+c34 <- c("Target",   "Opposite", "Start")   
+c35 <- c("Target",  "Start",   "Between")
+c36 <- c("Opposite")
+c37 <- c("Other", "Start", "Aim")  
+c38 <- c("Opposite", "Other")   
+c39 <- c("Start",   "Between", "Aim")    
+c40 <- c("Target",  "Between", "Aim")    
+c41 <- c("Start", "Other", "Aim")  
+c42 <- c("Between", "Start")  
+c43 <- c("Between", "Target",  "Aim")    
+c44 <- c("Opposite", "Start",    "Between") 
+c45 <- c("Start",   "Aim",     "Between")
+c46 <- c("Other",   "Start",   "Between")
+c47 <- c("Start",    "Opposite")
+c48 <- c("Start",   "Between", "Target") 
+c49 <- c("Aim",     "Between")
+c50 <- c("Aim",     "Target",  "Between")
+c51 <- c("Start", "Aim",   "Other")
+c52 <- c("Opposite", "Start",    "Target") 
+
+CachTar <- list(c2, c8, c16, c17, c19, c32, c34, c52)
+CachAim <- list(c1, c4, c6, c12, c15, c23, c28, c37, c41, c45, c49, c50, c51)
+CachOpp <- list(c21, c27, c29, c33, c36, c38, c47)
+MR <- list(c3, c14, c20, c24, c40, c43)
+PartialMR <- list(c13, c18, c22, c26, c35, c39)
+Between <- list(c5, c10, c11, c30, c42, c44, c46, c48)
+NoLook <- list(c7, c9)
+Other <- list(c25, c31)
+  
+initial_freq$Strategy <- NA
+
+for(si in tn){
+  idx <- initial_freq$Order == si
+  pattern = unique(initial_freq$LookLocation[idx])
+  if(list(pattern) %in% CachTar){
+    initial_freq[which(initial_freq$Order == si), ]$Strategy[1] <- "CachTar"
+  }else if(list(pattern) %in% CachAim){
+    initial_freq[which(initial_freq$Order == si), ]$Strategy[1] <- "CachAim"
+  }else if(list(pattern) %in% CachOpp){
+    initial_freq[which(initial_freq$Order == si), ]$Strategy[1] <- "CachOpp"
+  }else if(list(pattern) %in% MR){
+    initial_freq[which(initial_freq$Order == si), ]$Strategy[1] <- "MR"
+  }else if(list(pattern) %in% PartialMR){
+    initial_freq[which(initial_freq$Order == si), ]$Strategy[1] <- "PartialMR"
+  }else if(list(pattern) %in% Between){
+    initial_freq[which(initial_freq$Order == si), ]$Strategy[1] <- "Between"
+  }else if(list(pattern) %in% NoLook){
+    initial_freq[which(initial_freq$Order == si), ]$Strategy[1] <- "NoLook"
+  }else if(list(pattern) %in% Other){
+    initial_freq[which(initial_freq$Order == si), ]$Strategy[1] <- "Other"
+  }
+}
+
+initial_freq[which(initial_freq$Day == 5),] %>% drop_na %>% 
+  ggplot(aes(x = Strategy)) + 
+  geom_histogram(stat = 'count')
+
+freq_summary <- setNames(as.data.frame(matrix(0, ncol = 3, nrow = 48)), 
+                            c('Freq', "Type", "Day"))
+
+day1 <- count(initial_freq[which(initial_freq$Day == 1),],  vars = "Strategy")
+day1$day <- 1
+day2 <- count(initial_freq[which(initial_freq$Day == 2),],  vars = "Strategy")
+day2$day <- 2
+day3 <- count(initial_freq[which(initial_freq$Day == 3),],  vars = "Strategy")
+day3$day <- 3
+day4 <- count(initial_freq[which(initial_freq$Day == 4),],  vars = "Strategy")
+day4$day <- 4
+day5 <- count(initial_freq[which(initial_freq$Day == 5),],  vars = "Strategy")
+day5$day <- 5
+day6 <- count(initial_freq[which(initial_freq$Day == 6),],  vars = "Strategy")
+day6$day <- 6
+days <- rbind(day1, day2, day3, day4, day5, day6)
+days <- days %>% drop_na 
+
+for(i in 1:6){
+  total = sum(days[which(days$day == i & days$Strategy == "CachTar"),]$freq, 
+    days[which(days$day == i & days$Strategy == "CachAim"),]$freq, 
+    days[which(days$day == i & days$Strategy == "CachOpp"),]$freq, 
+    days[which(days$day == i & days$Strategy == "MR"),]$freq, 
+    days[which(days$day == i & days$Strategy == "PartialMR"),]$freq, 
+    days[which(days$day == i & days$Strategy == "Between"),]$freq, 
+    days[which(days$day == i & days$Strategy == "NoLook"),]$freq, 
+    days[which(days$day == i & days$Strategy == "Other"),]$freq, na.rm=T)
+  freq_summary$Freq[1 + 8*(i-1)] <- days[which(days$day == i & days$Strategy == "CachTar"),]$freq/total* 100
+  freq_summary$Freq[2 + 8*(i-1)] <- days[which(days$day == i & days$Strategy == "CachAim"),]$freq/total* 100
+  freq_summary$Freq[3 + 8*(i-1)] <- days[which(days$day == i & days$Strategy == "CachOpp"),]$freq/total* 100
+  freq_summary$Freq[4 + 8*(i-1)] <- sum(days[which(days$day == i & days$Strategy == "MR"),]$freq/total, na.rm=TRUE)* 100
+  freq_summary$Freq[5 + 8*(i-1)] <- days[which(days$day == i & days$Strategy == "PartialMR"),]$freq/total* 100
+  freq_summary$Freq[6 + 8*(i-1)] <- days[which(days$day == i & days$Strategy == "Between"),]$freq/total* 100
+  freq_summary$Freq[7 + 8*(i-1)] <- days[which(days$day == i & days$Strategy == "NoLook"),]$freq/total* 100
+  freq_summary$Freq[8 + 8*(i-1)] <- days[which(days$day == i & days$Strategy == "Other"),]$freq/total* 100
+  freq_summary$Type[1 + 8*(i-1)] <- "CachTar"
+  freq_summary$Type[2 + 8*(i-1)] <- "CachAim"
+  freq_summary$Type[3 + 8*(i-1)] <- "CachOpp"
+  freq_summary$Type[4 + 8*(i-1)] <- "MR"
+  freq_summary$Type[5 + 8*(i-1)] <- "PartialMR"
+  freq_summary$Type[6 + 8*(i-1)] <- "Between"
+  freq_summary$Type[7 + 8*(i-1)] <- "NoLook"
+  freq_summary$Type[8 + 8*(i-1)] <- "Other"
+  freq_summary$Day[(1 + 8*(i-1)):(8 + 8*(i-1)) ] <- i
+}
+
+
+ggplot(freq_summary) +
+  geom_bar( aes(x=Day, y=Freq, fill=Type), stat="identity",  alpha=0.7) +
+  facet_wrap(.~Type)
+  
+
+```
+
+CATEGORY CHECK
+```{r}
+targets <- unique (initial_freq$target)
+targets <- targets[!is.nan(targets)]
+num.tar <- length (targets)
+
+for(ti in 1:num.tar){
+  tarplot <-  initial_freq %>% drop_na %>% filter(target == targets[ti]) %>% filter(LookLocation == "Other") %>%
+  ggplot(aes(x = x_cent, y = y_cent)) +
+  stat_density_2d(aes(fill = ..density..), geom = "raster", contour = FALSE) +
+  scale_fill_distiller(palette=1, direction=-1) +
+  annotate('segment', y = -0.25, yend = 0.25, x = 0, xend = 0, color = 'grey') +
+  annotate('segment', y = 0, yend = 0, x = -0.25, xend = 0.25, color = 'grey') +
+  ylim(-0.25, 0.25) +
+  xlim(-0.25, 0.25) + 
+  #facet_wrap(.~Day, nrow = 2) + 
+  ggtitle(targets[ti])
+ 
+ print(tarplot)
+}
+
+
+```
+

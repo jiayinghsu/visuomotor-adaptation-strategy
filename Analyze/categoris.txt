@@ -1,0 +1,142 @@
+[1] "Target"
+[1] "Start"  "Target"
+[1] "Other"  "Target"
+[1] "Start"
+[1] "Target" "Start" 
+[1] "Start"  "Target" "Other"
+[1] "Other"  "Start"  "Target"
+[1] "Target" "Other" 
+
+
+
+[1] "Aim"    "Target"
+[1] "Start" "Aim" 
+[1] "Start"  "Aim"    "Target"
+[1] "Aim"
+[1] "Aim"   "Start"
+
+
+
+[1] "Start"  "Target" "Aim" 
+[1] "Other"  "Start"  "Target" "Aim" 
+[1] "Other"  "Target" "Aim" 
+[1] "Target" "Aim" 
+[1] "Target" "Start"  "Aim"
+
+
+
+[1] "Other"
+[1] "Start" "Other"
+[1] "Other" "Start"
+
+  
+
+
+
+
+
+
+c1 <- c("Aim", "Target")
+c2 <- c("Start", "Target")
+c3 <- c("Start", "Target", "Aim")   
+c4 <- c("Start", "Aim")  
+c5 <- c("Start", "Other")
+c6 <- c("Aim")
+c7 <- c("Start")
+c8 <- c("Target")
+c9 <- c("Other", "Start")
+c10 <- c("Other")
+c11 <- c("Opposite", "Start", "Target", "Aim")     
+c12 <- c("Other", "Target", "Aim")   
+c13 <- c("Other", "Target")
+c14 <- c("Target", "Start") 
+c15 <- c("Start", "Target", "Other") 
+c16 <- c("Other", "Start", "Target")
+c17 <- c("Target", "Aim")   
+c18 <- c("Opposite", "Target")  
+c19 <- c("Target", "Other") 
+c20 <- c("Aim", "Start")
+c21 <- c("Target", "Start", "Aim")   
+c22 <- c("Other", "Start", "Aim")  
+c23 <- c("Opposite", "Aim")     
+c24 <- c("Other", "Aim")  
+c25 <- c("Opposite", "Start")   
+c26 <- c("Start", "Opposite", "Target")  
+c27 <- c("Target", "Opposite", "Start")   
+c28 <- c("Target", "Start", "Other") 
+c29 <- c("Opposite")
+c30 <- c("Opposite", "Other")   
+c31 <- c("Target", "Other", "Aim")   
+c32 <- c("Start", "Other", "Aim")  
+c33 <- c("Start", "Opposite")
+c34 <- c("Aim", "Target", "Other") 
+c35 <- c("Start", "Aim", "Other")
+c36 <- c("Opposite", "Start", "Target")
+
+"Other"  "Start"  "Target"
+"Between" "Target" 
+"Start"  "Target"
+"Start" "Other"
+"Between" "Other"  
+"Start"
+"Target"
+"Start"   "Between"
+"Between"
+"Other"
+"Between" "Start"  
+"Other" "Start"
+"Other"  "Target"
+"Aim"     "Between" "Other"  
+"Between" "Target"  "Start"  
+"Other"  "Target" "Start" 
+"Target" "Start" 
+"Between" "Start"   "Other"  
+"Start"  "Target" "Other" 
+"Aim"   "Start"
+"Target" "Other" 
+"Aim"    "Target"
+"Start"   "Between" "Target" 
+"Start" "Aim"   "Other"
+"Target"  "Between" "Other"  
+"Start" "Aim"  
+"Aim"   "Other"
+"Between" "Aim"     "Target" 
+"Target"  "Between"
+"Start"  "Aim"    "Target"
+"Target" "Start"  "Other" 
+"Aim"
+"Between" "Start"   "Target" 
+"Aim"    "Start"  "Target"
+"Between" "Aim"     "Start"  
+"Target" "Aim"   
+"Start"  "Other"  "Target"
+"Aim"   "Start" "Other"
+"Aim"     "Between"
+
+
+
+
+
+
+
+
+
+	Start	412	0.28
+3	Start, Between	149	0.10
+4	Between	125	0.08
+5	Start, Aim	125	0.08
+6	Target	112	0.08
+7	Aim	80	0.05
+8	Other	76	0.05
+9	Start, Target	49	0.03
+10	Other, Start	33	0.02
+11	Other, Aim	31	0.02
+12	Start, Other	28	0.02
+13	BetweenOpp	25	0.02
+14	Between, Aim	23	0.02
+15	Other, Between	23	0.02
+16	Between, Target	17	0.01
+17	Target, Between	16	0.01
+18	Aim, Between	12	0.01
+19	Start, Target, Between	10	0.01
+20	AimOpp, Start	8	0.01
