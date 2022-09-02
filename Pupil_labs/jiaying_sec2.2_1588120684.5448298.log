@@ -1,0 +1,24 @@
+2020-04-28 17:38:04,545:root:Logging initialised at <FileHandler /Users/newxjy/Dropbox/VICE/JT/STRATEGY/Pupil_labs/jiaying_sec2.2_1588120684.5448298.log (DEBUG)>.
+2020-04-28 17:38:04,546:mm_modules.pyudp:Creating UDP socket object
+2020-04-28 17:38:04,546:mm_modules.pyudp:Socket bound to 127.0.0.1:11111.
+2020-04-28 17:38:04,547:mm_modules.pupilsocket:Creating zeromq socket object
+2020-04-28 17:38:04,547:mm_modules.pupilsocket:ZMQ socket bound to 127.0.0.1 on port 11111
+2020-04-28 17:38:04,548:root:Pupil socket connected.
+2020-04-28 17:38:04,548:mm_modules.pupilsocket:Payload sent: b'\x83\xa7subject\xacstart_plugin\xa4name\xabLog_History\xa4args\x80'
+2020-04-28 17:40:00,526:mm_modules.pupilsocket:Payload sent: b'\x83\xa7subject\xacstart_plugin\xa4name\xb2Annotation_Capture\xa4args\x80'
+2020-04-28 17:40:00,527:root:Pupil-Recorder Annotations plugin prompted.
+2020-04-28 17:40:00,528:mm_modules.pupilsocket:Timesync successful.
+2020-04-28 17:40:00,528:root:Pupil-Recorder time set.
+2020-04-28 17:40:00,528:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xadDummy Trigger\xa9timestamp\xcbA\xd7\xaa38!\xcf\xd1\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:40:00,528:mm_modules.pyudp:Received buffer: b'STOP_REC'.
+2020-04-28 17:40:00,529:mm_modules.pupilsocket:OK
+2020-04-28 17:40:00,529:root:b'STOP_REC' 1588120800529
+2020-04-28 17:40:00,529:mm_modules.pyudp:Received buffer: b'START_REC'.
+2020-04-28 17:40:00,530:mm_modules.pupilsocket:OK
+2020-04-28 17:40:00,530:root:b'START_REC' 1588120800530
+2020-04-28 17:40:00,531:mm_modules.pyudp:Received buffer: b'START_CAL'.
+2020-04-28 17:40:00,531:mm_modules.pupilsocket:OK
+2020-04-28 17:40:00,532:root:b'START_CAL' 1588120800531
+2020-04-28 17:40:00,532:mm_modules.pyudp:Received buffer: b'0'.
+2020-04-28 17:40:00,532:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa6Event0\xa9timestamp\xcbA\xd7\xaa38"\x15U\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:40:00,533:root:b'0' 1588120800532

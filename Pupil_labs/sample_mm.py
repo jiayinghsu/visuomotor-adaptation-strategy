@@ -1,0 +1,1208 @@
+from mm_modules import pupilsocket, pytcp, pyudp
+import logging 
+import string 
+from time import time
+
+time_fn = time
+
+# Begin runtime with entry of ppID
+# This is used later for setting dir/file names
+participantID = input('Participant ID: ')
+
+## Establish Logger
+logger = logging.getLogger()
+logger.setLevel(logging.DEBUG)
+
+formatter = logging.Formatter('%(asctime)s:%(name)s:%(message)s')
+
+fileHandler = logging.FileHandler('{}_{}.log'.format(participantID, time_fn()))
+fileHandler.setLevel(logging.DEBUG)
+fileHandler.setFormatter(formatter)
+
+streamHandler = logging.StreamHandler()
+streamHandler.setFormatter(formatter)
+
+logger.addHandler(streamHandler)
+logger.addHandler(fileHandler)
+logger.info('Logging initialised at {}.'.format(fileHandler))
+
+## Connect sockets
+# udp sock
+# need to modify if using remote computer
+
+#udpListeningSock = pyudp.UDPsocket('169.254.94.191', 11111)
+udpListeningSock = pyudp.UDPsocket('127.0.0.1', 11111)
+udpListeningSock.sock_bind()
+
+# pupilLink = pupilsocket.ZMQsocket('127.0.0.1', 50020)
+pupilLink = pupilsocket.ZMQsocket('127.0.0.1', 11111) # modified 08/03/2019
+pupilLink.zmq_connect()
+logger.info('Pupil socket connected.')
+
+pupilLink.notify({'subject': 'start_plugin',
+                    'name': 'Log_History',
+                    'args': {}})
+pupilLink.notify({'subject': 'start_plugin',
+                    'name': 'Annotation_Capture',
+                    'args': {}})
+logger.info('Pupil-Recorder Annotations plugin prompted.')
+
+## The Pupil developers recommend using their Sync system
+## Time() here will work but won't be millisecond accurate.
+pupilLink.set_time(time_fn())
+logger.info('Pupil-Recorder time set.')
+pupilLink.send_trigger('Dummy Trigger', timestamp=time_fn())
+
+## Define Triggers using a dict for pseudo switch cases
+## Note that this solution will not handle mixed cases
+# Commands
+
+def startrec():
+    # This is currently set to receive input from stimuli code 
+    # you may want to just change recTitle input to ParticipantID
+    pupilLink.start_recording(recTitle=data[10:len(data)])
+def stoprec():
+    pupilLink.stop_recording()
+def startcal():
+    pupilLink.start_calibration()
+def stopcal():
+    pupilLink.stop_calibration()
+
+# Triggers
+def trig0():
+    pupilLink.send_trigger('Event0', timestamp=time_fn())
+def trig1():
+    pupilLink.send_trigger('Event1', timestamp=time_fn())
+def trig2():
+    pupilLink.send_trigger('Event2', timestamp=time_fn())
+def trig3():
+    pupilLink.send_trigger('Event3', timestamp=time_fn())
+def trig4():
+    pupilLink.send_trigger('Event4', timestamp=time_fn())
+def trig5():
+    pupilLink.send_trigger('Event5', timestamp=time_fn())
+def trig6():
+    pupilLink.send_trigger('Event6', timestamp=time_fn())
+def trig7():
+    pupilLink.send_trigger('Event7', timestamp=time_fn())
+def trig8():
+    pupilLink.send_trigger('Event8', timestamp=time_fn())
+def trig9():
+    pupilLink.send_trigger('Event9', timestamp=time_fn())
+def trig10():
+    pupilLink.send_trigger('Event10', timestamp=time_fn())
+def trig11():
+    pupilLink.send_trigger('Event11', timestamp=time_fn())
+def trig12():
+    pupilLink.send_trigger('Event12', timestamp=time_fn())
+def trig13():
+    pupilLink.send_trigger('Event13', timestamp=time_fn())
+def trig14():
+    pupilLink.send_trigger('Event14', timestamp=time_fn())
+def trig15():
+    pupilLink.send_trigger('Event15', timestamp=time_fn())
+def trig16():
+    pupilLink.send_trigger('Event16', timestamp=time_fn())
+def trig17():
+    pupilLink.send_trigger('Event17', timestamp=time_fn())
+def trig18():
+    pupilLink.send_trigger('Event18', timestamp=time_fn())
+def trig19():
+    pupilLink.send_trigger('Event19', timestamp=time_fn())
+def trig20():
+    pupilLink.send_trigger('Event20', timestamp=time_fn())
+def trig21():
+    pupilLink.send_trigger('Event21', timestamp=time_fn())
+def trig22():
+    pupilLink.send_trigger('Event22', timestamp=time_fn())
+def trig23():
+    pupilLink.send_trigger('Event23', timestamp=time_fn())
+def trig24():
+    pupilLink.send_trigger('Event24', timestamp=time_fn())
+def trig25():
+    pupilLink.send_trigger('Event25', timestamp=time_fn())
+def trig26():
+    pupilLink.send_trigger('Event26', timestamp=time_fn())
+def trig27():
+    pupilLink.send_trigger('Event27', timestamp=time_fn())
+def trig28():
+    pupilLink.send_trigger('Event28', timestamp=time_fn())
+def trig29():
+    pupilLink.send_trigger('Event29', timestamp=time_fn())
+def trig30():
+    pupilLink.send_trigger('Event30', timestamp=time_fn())
+def trig31():
+    pupilLink.send_trigger('Event31', timestamp=time_fn())
+def trig32():
+    pupilLink.send_trigger('Event32', timestamp=time_fn())
+def trig33():
+    pupilLink.send_trigger('Event33', timestamp=time_fn())
+def trig34():
+    pupilLink.send_trigger('Event34', timestamp=time_fn())
+def trig35():
+    pupilLink.send_trigger('Event35', timestamp=time_fn())
+def trig36():
+    pupilLink.send_trigger('Event36', timestamp=time_fn())
+def trig37():
+    pupilLink.send_trigger('Event37', timestamp=time_fn())
+def trig38():
+    pupilLink.send_trigger('Event38', timestamp=time_fn())
+def trig39():
+    pupilLink.send_trigger('Event39', timestamp=time_fn())
+def trig40():
+    pupilLink.send_trigger('Event40', timestamp=time_fn())
+def trig41():
+    pupilLink.send_trigger('Event41', timestamp=time_fn())
+def trig42():
+    pupilLink.send_trigger('Event42', timestamp=time_fn())
+def trig43():
+    pupilLink.send_trigger('Event43', timestamp=time_fn())
+def trig44():
+    pupilLink.send_trigger('Event44', timestamp=time_fn())
+def trig45():
+    pupilLink.send_trigger('Event45', timestamp=time_fn())
+def trig46():
+    pupilLink.send_trigger('Event46', timestamp=time_fn())
+def trig47():
+    pupilLink.send_trigger('Event47', timestamp=time_fn())
+def trig48():
+    pupilLink.send_trigger('Event48', timestamp=time_fn())
+def trig49():
+    pupilLink.send_trigger('Event49', timestamp=time_fn())
+def trig50():
+    pupilLink.send_trigger('Event50', timestamp=time_fn())
+def trig51():
+    pupilLink.send_trigger('Event51', timestamp=time_fn())
+def trig52():
+    pupilLink.send_trigger('Event52', timestamp=time_fn())
+def trig53():
+    pupilLink.send_trigger('Event53', timestamp=time_fn())
+def trig54():
+    pupilLink.send_trigger('Event54', timestamp=time_fn())
+def trig55():
+    pupilLink.send_trigger('Event55', timestamp=time_fn())
+def trig56():
+    pupilLink.send_trigger('Event56', timestamp=time_fn())
+def trig57():
+    pupilLink.send_trigger('Event57', timestamp=time_fn())
+def trig58():
+    pupilLink.send_trigger('Event58', timestamp=time_fn())
+def trig59():
+    pupilLink.send_trigger('Event59', timestamp=time_fn())
+def trig60():
+    pupilLink.send_trigger('Event60', timestamp=time_fn())
+def trig61():
+    pupilLink.send_trigger('Event61', timestamp=time_fn())
+def trig62():
+    pupilLink.send_trigger('Event62', timestamp=time_fn())
+def trig63():
+    pupilLink.send_trigger('Event63', timestamp=time_fn())
+def trig64():
+    pupilLink.send_trigger('Event64', timestamp=time_fn())
+def trig65():
+    pupilLink.send_trigger('Event65', timestamp=time_fn())
+def trig66():
+    pupilLink.send_trigger('Event66', timestamp=time_fn())
+def trig67():
+    pupilLink.send_trigger('Event67', timestamp=time_fn())
+def trig68():
+    pupilLink.send_trigger('Event68', timestamp=time_fn())
+def trig69():
+    pupilLink.send_trigger('Event69', timestamp=time_fn())
+def trig70():
+    pupilLink.send_trigger('Event70', timestamp=time_fn())
+def trig71():
+    pupilLink.send_trigger('Event71', timestamp=time_fn())
+def trig72():
+    pupilLink.send_trigger('Event72', timestamp=time_fn())
+def trig73():
+    pupilLink.send_trigger('Event73', timestamp=time_fn())
+def trig74():
+    pupilLink.send_trigger('Event74', timestamp=time_fn())
+def trig75():
+    pupilLink.send_trigger('Event75', timestamp=time_fn())
+def trig76():
+    pupilLink.send_trigger('Event76', timestamp=time_fn())
+def trig77():
+    pupilLink.send_trigger('Event77', timestamp=time_fn())
+def trig78():
+    pupilLink.send_trigger('Event78', timestamp=time_fn())
+def trig79():
+    pupilLink.send_trigger('Event79', timestamp=time_fn())
+def trig80():
+    pupilLink.send_trigger('Event80', timestamp=time_fn())
+def trig81():
+    pupilLink.send_trigger('Event81', timestamp=time_fn())
+def trig82():
+    pupilLink.send_trigger('Event82', timestamp=time_fn())
+def trig83():
+    pupilLink.send_trigger('Event83', timestamp=time_fn())
+def trig84():
+    pupilLink.send_trigger('Event84', timestamp=time_fn())
+def trig85():
+    pupilLink.send_trigger('Event85', timestamp=time_fn())
+def trig86():
+    pupilLink.send_trigger('Event86', timestamp=time_fn())
+def trig87():
+    pupilLink.send_trigger('Event87', timestamp=time_fn())
+def trig88():
+    pupilLink.send_trigger('Event88', timestamp=time_fn())
+def trig89():
+    pupilLink.send_trigger('Event89', timestamp=time_fn())
+def trig90():
+    pupilLink.send_trigger('Event90', timestamp=time_fn())
+def trig91():
+    pupilLink.send_trigger('Event91', timestamp=time_fn())
+def trig92():
+    pupilLink.send_trigger('Event92', timestamp=time_fn())
+def trig93():
+    pupilLink.send_trigger('Event93', timestamp=time_fn())
+def trig94():
+    pupilLink.send_trigger('Event94', timestamp=time_fn())
+def trig95():
+    pupilLink.send_trigger('Event95', timestamp=time_fn())
+def trig96():
+    pupilLink.send_trigger('Event96', timestamp=time_fn())
+def trig97():
+    pupilLink.send_trigger('Event97', timestamp=time_fn())
+def trig98():
+    pupilLink.send_trigger('Event98', timestamp=time_fn())
+def trig99():
+    pupilLink.send_trigger('Event99', timestamp=time_fn())
+def trig100():
+    pupilLink.send_trigger('Event100', timestamp=time_fn())
+def trig101():
+    pupilLink.send_trigger('Event101', timestamp=time_fn())
+def trig102():
+    pupilLink.send_trigger('Event102', timestamp=time_fn())
+def trig103():
+    pupilLink.send_trigger('Event103', timestamp=time_fn())
+def trig104():
+    pupilLink.send_trigger('Event104', timestamp=time_fn())
+def trig105():
+    pupilLink.send_trigger('Event105', timestamp=time_fn())
+def trig106():
+    pupilLink.send_trigger('Event106', timestamp=time_fn())
+def trig107():
+    pupilLink.send_trigger('Event107', timestamp=time_fn())
+def trig108():
+    pupilLink.send_trigger('Event108', timestamp=time_fn())
+def trig109():
+    pupilLink.send_trigger('Event109', timestamp=time_fn())
+def trig110():
+    pupilLink.send_trigger('Event110', timestamp=time_fn())
+def trig111():
+    pupilLink.send_trigger('Event111', timestamp=time_fn())
+def trig112():
+    pupilLink.send_trigger('Event112', timestamp=time_fn())
+def trig113():
+    pupilLink.send_trigger('Event113', timestamp=time_fn())
+def trig114():
+    pupilLink.send_trigger('Event114', timestamp=time_fn())
+def trig115():
+    pupilLink.send_trigger('Event115', timestamp=time_fn())
+def trig116():
+    pupilLink.send_trigger('Event116', timestamp=time_fn())
+def trig117():
+    pupilLink.send_trigger('Event117', timestamp=time_fn())
+def trig118():
+    pupilLink.send_trigger('Event118', timestamp=time_fn())
+def trig119():
+    pupilLink.send_trigger('Event119', timestamp=time_fn())
+def trig120():
+    pupilLink.send_trigger('Event120', timestamp=time_fn())
+def trig121():
+    pupilLink.send_trigger('Event121', timestamp=time_fn())
+def trig122():
+    pupilLink.send_trigger('Event122', timestamp=time_fn())
+def trig123():
+    pupilLink.send_trigger('Event123', timestamp=time_fn())
+def trig124():
+    pupilLink.send_trigger('Event124', timestamp=time_fn())
+def trig125():
+    pupilLink.send_trigger('Event125', timestamp=time_fn())
+def trig126():
+    pupilLink.send_trigger('Event126', timestamp=time_fn())
+def trig127():
+    pupilLink.send_trigger('Event127', timestamp=time_fn())
+def trig128():
+    pupilLink.send_trigger('Event128', timestamp=time_fn())
+def trig129():
+    pupilLink.send_trigger('Event129', timestamp=time_fn())
+def trig130():
+    pupilLink.send_trigger('Event130', timestamp=time_fn())
+def trig131():
+    pupilLink.send_trigger('Event131', timestamp=time_fn())
+def trig132():
+    pupilLink.send_trigger('Event132', timestamp=time_fn())
+def trig133():
+    pupilLink.send_trigger('Event133', timestamp=time_fn())
+def trig134():
+    pupilLink.send_trigger('Event134', timestamp=time_fn())
+def trig135():
+    pupilLink.send_trigger('Event135', timestamp=time_fn())
+def trig136():
+    pupilLink.send_trigger('Event136', timestamp=time_fn())
+def trig137():
+    pupilLink.send_trigger('Event137', timestamp=time_fn())
+def trig138():
+    pupilLink.send_trigger('Event138', timestamp=time_fn())
+def trig139():
+    pupilLink.send_trigger('Event139', timestamp=time_fn())
+def trig140():
+    pupilLink.send_trigger('Event140', timestamp=time_fn())
+def trig141():
+    pupilLink.send_trigger('Event141', timestamp=time_fn())
+def trig142():
+    pupilLink.send_trigger('Event142', timestamp=time_fn())
+def trig143():
+    pupilLink.send_trigger('Event143', timestamp=time_fn())
+def trig144():
+    pupilLink.send_trigger('Event144', timestamp=time_fn())
+def trig145():
+    pupilLink.send_trigger('Event145', timestamp=time_fn())
+def trig146():
+    pupilLink.send_trigger('Event146', timestamp=time_fn())
+def trig147():
+    pupilLink.send_trigger('Event147', timestamp=time_fn())
+def trig148():
+    pupilLink.send_trigger('Event148', timestamp=time_fn())
+def trig149():
+    pupilLink.send_trigger('Event149', timestamp=time_fn())
+def trig150():
+    pupilLink.send_trigger('Event150', timestamp=time_fn())
+def trig151():
+    pupilLink.send_trigger('Event151', timestamp=time_fn())
+def trig152():
+    pupilLink.send_trigger('Event152', timestamp=time_fn())
+def trig153():
+    pupilLink.send_trigger('Event153', timestamp=time_fn())
+def trig154():
+    pupilLink.send_trigger('Event154', timestamp=time_fn())
+def trig155():
+    pupilLink.send_trigger('Event155', timestamp=time_fn())
+def trig156():
+    pupilLink.send_trigger('Event156', timestamp=time_fn())
+def trig157():
+    pupilLink.send_trigger('Event157', timestamp=time_fn())
+def trig158():
+    pupilLink.send_trigger('Event158', timestamp=time_fn())
+def trig159():
+    pupilLink.send_trigger('Event159', timestamp=time_fn())
+def trig160():
+    pupilLink.send_trigger('Event160', timestamp=time_fn())
+def trig161():
+    pupilLink.send_trigger('Event161', timestamp=time_fn())
+def trig162():
+    pupilLink.send_trigger('Event162', timestamp=time_fn())
+def trig163():
+    pupilLink.send_trigger('Event163', timestamp=time_fn())
+def trig164():
+    pupilLink.send_trigger('Event164', timestamp=time_fn())
+def trig165():
+    pupilLink.send_trigger('Event165', timestamp=time_fn())
+def trig166():
+    pupilLink.send_trigger('Event166', timestamp=time_fn())
+def trig167():
+    pupilLink.send_trigger('Event167', timestamp=time_fn())
+def trig168():
+    pupilLink.send_trigger('Event168', timestamp=time_fn())
+def trig169():
+    pupilLink.send_trigger('Event169', timestamp=time_fn())
+def trig170():
+    pupilLink.send_trigger('Event170', timestamp=time_fn())
+def trig171():
+    pupilLink.send_trigger('Event171', timestamp=time_fn())
+def trig172():
+    pupilLink.send_trigger('Event172', timestamp=time_fn())
+def trig173():
+    pupilLink.send_trigger('Event173', timestamp=time_fn())
+def trig174():
+    pupilLink.send_trigger('Event174', timestamp=time_fn())
+def trig175():
+    pupilLink.send_trigger('Event175', timestamp=time_fn())
+def trig176():
+    pupilLink.send_trigger('Event176', timestamp=time_fn())
+def trig177():
+    pupilLink.send_trigger('Event177', timestamp=time_fn())
+def trig178():
+    pupilLink.send_trigger('Event178', timestamp=time_fn())
+def trig179():
+    pupilLink.send_trigger('Event179', timestamp=time_fn())
+def trig180():
+    pupilLink.send_trigger('Event180', timestamp=time_fn())
+def trig181():
+    pupilLink.send_trigger('Event181', timestamp=time_fn())
+def trig182():
+    pupilLink.send_trigger('Event182', timestamp=time_fn())
+def trig183():
+    pupilLink.send_trigger('Event183', timestamp=time_fn())
+def trig184():
+    pupilLink.send_trigger('Event184', timestamp=time_fn())
+def trig185():
+    pupilLink.send_trigger('Event185', timestamp=time_fn())
+def trig186():
+    pupilLink.send_trigger('Event186', timestamp=time_fn())
+def trig187():
+    pupilLink.send_trigger('Event187', timestamp=time_fn())
+def trig188():
+    pupilLink.send_trigger('Event188', timestamp=time_fn())
+def trig189():
+    pupilLink.send_trigger('Event189', timestamp=time_fn())
+def trig190():
+    pupilLink.send_trigger('Event190', timestamp=time_fn())
+def trig191():
+    pupilLink.send_trigger('Event191', timestamp=time_fn())
+def trig192():
+    pupilLink.send_trigger('Event192', timestamp=time_fn())
+def trig193():
+    pupilLink.send_trigger('Event193', timestamp=time_fn())
+def trig194():
+    pupilLink.send_trigger('Event194', timestamp=time_fn())
+def trig195():
+    pupilLink.send_trigger('Event195', timestamp=time_fn())
+def trig196():
+    pupilLink.send_trigger('Event196', timestamp=time_fn())
+def trig197():
+    pupilLink.send_trigger('Event197', timestamp=time_fn())
+def trig198():
+    pupilLink.send_trigger('Event198', timestamp=time_fn())
+def trig199():
+    pupilLink.send_trigger('Event199', timestamp=time_fn())
+def trig200():
+    pupilLink.send_trigger('Event200', timestamp=time_fn())
+def trig201():
+    pupilLink.send_trigger('Event201', timestamp=time_fn())
+def trig202():
+    pupilLink.send_trigger('Event202', timestamp=time_fn())
+def trig203():
+    pupilLink.send_trigger('Event203', timestamp=time_fn())
+def trig204():
+    pupilLink.send_trigger('Event204', timestamp=time_fn())
+def trig205():
+    pupilLink.send_trigger('Event205', timestamp=time_fn())
+def trig206():
+    pupilLink.send_trigger('Event206', timestamp=time_fn())
+def trig207():
+    pupilLink.send_trigger('Event207', timestamp=time_fn())
+def trig208():
+    pupilLink.send_trigger('Event208', timestamp=time_fn())
+def trig209():
+    pupilLink.send_trigger('Event209', timestamp=time_fn())
+def trig210():
+    pupilLink.send_trigger('Event210', timestamp=time_fn())
+def trig211():
+    pupilLink.send_trigger('Event211', timestamp=time_fn())
+def trig212():
+    pupilLink.send_trigger('Event212', timestamp=time_fn())
+def trig213():
+    pupilLink.send_trigger('Event213', timestamp=time_fn())
+def trig214():
+    pupilLink.send_trigger('Event214', timestamp=time_fn())
+def trig215():
+    pupilLink.send_trigger('Event215', timestamp=time_fn())
+def trig216():
+    pupilLink.send_trigger('Event216', timestamp=time_fn())
+def trig217():
+    pupilLink.send_trigger('Event217', timestamp=time_fn())
+def trig218():
+    pupilLink.send_trigger('Event218', timestamp=time_fn())
+def trig219():
+    pupilLink.send_trigger('Event219', timestamp=time_fn())
+def trig220():
+    pupilLink.send_trigger('Event220', timestamp=time_fn())
+def trig221():
+    pupilLink.send_trigger('Event221', timestamp=time_fn())
+def trig222():
+    pupilLink.send_trigger('Event222', timestamp=time_fn())
+def trig223():
+    pupilLink.send_trigger('Event223', timestamp=time_fn())
+def trig224():
+    pupilLink.send_trigger('Event224', timestamp=time_fn())
+def trig225():
+    pupilLink.send_trigger('Event225', timestamp=time_fn())
+def trig226():
+    pupilLink.send_trigger('Event226', timestamp=time_fn())
+def trig227():
+    pupilLink.send_trigger('Event227', timestamp=time_fn())
+def trig228():
+    pupilLink.send_trigger('Event228', timestamp=time_fn())
+def trig229():
+    pupilLink.send_trigger('Event229', timestamp=time_fn())
+def trig230():
+    pupilLink.send_trigger('Event230', timestamp=time_fn())
+def trig231():
+    pupilLink.send_trigger('Event231', timestamp=time_fn())
+def trig232():
+    pupilLink.send_trigger('Event232', timestamp=time_fn())
+def trig233():
+    pupilLink.send_trigger('Event233', timestamp=time_fn())
+def trig234():
+    pupilLink.send_trigger('Event234', timestamp=time_fn())
+def trig235():
+    pupilLink.send_trigger('Event235', timestamp=time_fn())
+def trig236():
+    pupilLink.send_trigger('Event236', timestamp=time_fn())
+def trig237():
+    pupilLink.send_trigger('Event237', timestamp=time_fn())
+def trig238():
+    pupilLink.send_trigger('Event238', timestamp=time_fn())
+def trig239():
+    pupilLink.send_trigger('Event239', timestamp=time_fn())
+def trig240():
+    pupilLink.send_trigger('Event240', timestamp=time_fn())
+def trig241():
+    pupilLink.send_trigger('Event241', timestamp=time_fn())
+def trig242():
+    pupilLink.send_trigger('Event242', timestamp=time_fn())
+def trig243():
+    pupilLink.send_trigger('Event243', timestamp=time_fn())
+def trig244():
+    pupilLink.send_trigger('Event244', timestamp=time_fn())
+def trig245():
+    pupilLink.send_trigger('Event245', timestamp=time_fn())
+def trig246():
+    pupilLink.send_trigger('Event246', timestamp=time_fn())
+def trig247():
+    pupilLink.send_trigger('Event247', timestamp=time_fn())
+def trig248():
+    pupilLink.send_trigger('Event248', timestamp=time_fn())
+def trig249():
+    pupilLink.send_trigger('Event249', timestamp=time_fn())
+def trig250():
+    pupilLink.send_trigger('Event250', timestamp=time_fn())
+def trig251():
+    pupilLink.send_trigger('Event251', timestamp=time_fn())
+def trig252():
+    pupilLink.send_trigger('Event252', timestamp=time_fn())
+def trig253():
+    pupilLink.send_trigger('Event253', timestamp=time_fn())
+def trig254():
+    pupilLink.send_trigger('Event254', timestamp=time_fn())
+def trig255():
+    pupilLink.send_trigger('Event255', timestamp=time_fn())
+def trig256():
+    pupilLink.send_trigger('Event256', timestamp=time_fn())
+def trig257():
+    pupilLink.send_trigger('Event257', timestamp=time_fn())
+def trig258():
+    pupilLink.send_trigger('Event258', timestamp=time_fn())
+def trig259():
+    pupilLink.send_trigger('Event259', timestamp=time_fn())
+def trig260():
+    pupilLink.send_trigger('Event260', timestamp=time_fn())
+def trig261():
+    pupilLink.send_trigger('Event261', timestamp=time_fn())
+def trig262():
+    pupilLink.send_trigger('Event262', timestamp=time_fn())
+def trig263():
+    pupilLink.send_trigger('Event263', timestamp=time_fn())
+def trig264():
+    pupilLink.send_trigger('Event264', timestamp=time_fn())
+def trig265():
+    pupilLink.send_trigger('Event265', timestamp=time_fn())
+def trig266():
+    pupilLink.send_trigger('Event266', timestamp=time_fn())
+def trig267():
+    pupilLink.send_trigger('Event267', timestamp=time_fn())
+def trig268():
+    pupilLink.send_trigger('Event268', timestamp=time_fn())
+def trig269():
+    pupilLink.send_trigger('Event269', timestamp=time_fn())
+def trig270():
+    pupilLink.send_trigger('Event270', timestamp=time_fn())
+def trig271():
+    pupilLink.send_trigger('Event271', timestamp=time_fn())
+def trig272():
+    pupilLink.send_trigger('Event272', timestamp=time_fn())
+def trig273():
+    pupilLink.send_trigger('Event273', timestamp=time_fn())
+def trig274():
+    pupilLink.send_trigger('Event274', timestamp=time_fn())
+def trig275():
+    pupilLink.send_trigger('Event275', timestamp=time_fn())
+def trig276():
+    pupilLink.send_trigger('Event276', timestamp=time_fn())
+def trig277():
+    pupilLink.send_trigger('Event277', timestamp=time_fn())
+def trig278():
+    pupilLink.send_trigger('Event278', timestamp=time_fn())
+def trig279():
+    pupilLink.send_trigger('Event279', timestamp=time_fn())
+def trig280():
+    pupilLink.send_trigger('Event280', timestamp=time_fn())
+def trig281():
+    pupilLink.send_trigger('Event281', timestamp=time_fn())
+def trig282():
+    pupilLink.send_trigger('Event282', timestamp=time_fn())
+def trig283():
+    pupilLink.send_trigger('Event283', timestamp=time_fn())
+def trig284():
+    pupilLink.send_trigger('Event284', timestamp=time_fn())
+def trig285():
+    pupilLink.send_trigger('Event285', timestamp=time_fn())
+def trig286():
+    pupilLink.send_trigger('Event286', timestamp=time_fn())
+def trig287():
+    pupilLink.send_trigger('Event287', timestamp=time_fn())
+def trig288():
+    pupilLink.send_trigger('Event288', timestamp=time_fn())
+def trig289():
+    pupilLink.send_trigger('Event289', timestamp=time_fn())
+def trig290():
+    pupilLink.send_trigger('Event290', timestamp=time_fn())
+def trig291():
+    pupilLink.send_trigger('Event291', timestamp=time_fn())
+def trig292():
+    pupilLink.send_trigger('Event292', timestamp=time_fn())
+def trig293():
+    pupilLink.send_trigger('Event293', timestamp=time_fn())
+def trig294():
+    pupilLink.send_trigger('Event294', timestamp=time_fn())
+def trig295():
+    pupilLink.send_trigger('Event295', timestamp=time_fn())
+def trig296():
+    pupilLink.send_trigger('Event296', timestamp=time_fn())
+def trig297():
+    pupilLink.send_trigger('Event297', timestamp=time_fn())
+def trig298():
+    pupilLink.send_trigger('Event298', timestamp=time_fn())
+def trig299():
+    pupilLink.send_trigger('Event299', timestamp=time_fn())
+def trig300():
+    pupilLink.send_trigger('Event300', timestamp=time_fn())
+def trig301():
+    pupilLink.send_trigger('Event301', timestamp=time_fn())
+def trig302():
+    pupilLink.send_trigger('Event202', timestamp=time_fn())
+def trig303():
+    pupilLink.send_trigger('Event203', timestamp=time_fn())
+def trig304():
+    pupilLink.send_trigger('Event204', timestamp=time_fn())
+def trig305():
+    pupilLink.send_trigger('Event205', timestamp=time_fn())
+def trig306():
+    pupilLink.send_trigger('Event206', timestamp=time_fn())
+def trig307():
+    pupilLink.send_trigger('Event207', timestamp=time_fn())
+def trig308():
+    pupilLink.send_trigger('Event208', timestamp=time_fn())
+def trig309():
+    pupilLink.send_trigger('Event209', timestamp=time_fn())
+def trig310():
+    pupilLink.send_trigger('Event210', timestamp=time_fn())
+def trig311():
+    pupilLink.send_trigger('Event211', timestamp=time_fn())
+def trig312():
+    pupilLink.send_trigger('Event212', timestamp=time_fn())
+def trig313():
+    pupilLink.send_trigger('Event213', timestamp=time_fn())
+def trig314():
+    pupilLink.send_trigger('Event214', timestamp=time_fn())
+def trig315():
+    pupilLink.send_trigger('Event215', timestamp=time_fn())
+def trig316():
+    pupilLink.send_trigger('Event216', timestamp=time_fn())
+def trig317():
+    pupilLink.send_trigger('Event217', timestamp=time_fn())
+def trig318():
+    pupilLink.send_trigger('Event218', timestamp=time_fn())
+def trig319():
+    pupilLink.send_trigger('Event219', timestamp=time_fn())
+def trig320():
+    pupilLink.send_trigger('Event220', timestamp=time_fn())
+def trig321():
+    pupilLink.send_trigger('Event221', timestamp=time_fn())
+def trig322():
+    pupilLink.send_trigger('Event222', timestamp=time_fn())
+def trig323():
+    pupilLink.send_trigger('Event223', timestamp=time_fn())
+def trig324():
+    pupilLink.send_trigger('Event224', timestamp=time_fn())
+def trig325():
+    pupilLink.send_trigger('Event225', timestamp=time_fn())
+def trig326():
+    pupilLink.send_trigger('Event226', timestamp=time_fn())
+def trig327():
+    pupilLink.send_trigger('Event227', timestamp=time_fn())
+def trig328():
+    pupilLink.send_trigger('Event228', timestamp=time_fn())
+def trig329():
+    pupilLink.send_trigger('Event229', timestamp=time_fn())
+def trig330():
+    pupilLink.send_trigger('Event230', timestamp=time_fn())
+def trig331():
+    pupilLink.send_trigger('Event231', timestamp=time_fn())
+def trig332():
+    pupilLink.send_trigger('Event232', timestamp=time_fn())
+def trig333():
+    pupilLink.send_trigger('Event233', timestamp=time_fn())
+def trig334():
+    pupilLink.send_trigger('Event234', timestamp=time_fn())
+def trig335():
+    pupilLink.send_trigger('Event235', timestamp=time_fn())
+def trig336():
+    pupilLink.send_trigger('Event236', timestamp=time_fn())
+def trig337():
+    pupilLink.send_trigger('Event237', timestamp=time_fn())
+def trig338():
+    pupilLink.send_trigger('Event238', timestamp=time_fn())
+def trig339():
+    pupilLink.send_trigger('Event239', timestamp=time_fn())
+def trig340():
+    pupilLink.send_trigger('Event240', timestamp=time_fn())
+def trig341():
+    pupilLink.send_trigger('Event241', timestamp=time_fn())
+def trig342():
+    pupilLink.send_trigger('Event242', timestamp=time_fn())
+def trig343():
+    pupilLink.send_trigger('Event243', timestamp=time_fn())
+def trig344():
+    pupilLink.send_trigger('Event244', timestamp=time_fn())
+def trig345():
+    pupilLink.send_trigger('Event245', timestamp=time_fn())
+def trig346():
+    pupilLink.send_trigger('Event246', timestamp=time_fn())
+def trig347():
+    pupilLink.send_trigger('Event247', timestamp=time_fn())
+def trig348():
+    pupilLink.send_trigger('Event248', timestamp=time_fn())
+def trig349():
+    pupilLink.send_trigger('Event249', timestamp=time_fn())
+def trig350():
+    pupilLink.send_trigger('Event250', timestamp=time_fn())
+def trig351():
+    pupilLink.send_trigger('Event251', timestamp=time_fn())
+def trig352():
+    pupilLink.send_trigger('Event252', timestamp=time_fn())
+def trig353():
+    pupilLink.send_trigger('Event253', timestamp=time_fn())
+def trig354():
+    pupilLink.send_trigger('Event254', timestamp=time_fn())
+def trig355():
+    pupilLink.send_trigger('Event255', timestamp=time_fn())
+def trig356():
+    pupilLink.send_trigger('Event256', timestamp=time_fn())
+def trig357():
+    pupilLink.send_trigger('Event257', timestamp=time_fn())
+def trig358():
+    pupilLink.send_trigger('Event258', timestamp=time_fn())
+def trig359():
+    pupilLink.send_trigger('Event259', timestamp=time_fn())
+def trig360():
+    pupilLink.send_trigger('Event260', timestamp=time_fn())
+def trig361():
+    pupilLink.send_trigger('Event261', timestamp=time_fn())
+def trig362():
+    pupilLink.send_trigger('Event262', timestamp=time_fn())
+def trig363():
+    pupilLink.send_trigger('Event263', timestamp=time_fn())
+def trig364():
+    pupilLink.send_trigger('Event264', timestamp=time_fn())
+def trig365():
+    pupilLink.send_trigger('Event265', timestamp=time_fn())
+def trig366():
+    pupilLink.send_trigger('Event266', timestamp=time_fn())
+def trig367():
+    pupilLink.send_trigger('Event267', timestamp=time_fn())
+def trig368():
+    pupilLink.send_trigger('Event268', timestamp=time_fn())
+def trig369():
+    pupilLink.send_trigger('Event269', timestamp=time_fn())
+def trig370():
+    pupilLink.send_trigger('Event270', timestamp=time_fn())
+def trig371():
+    pupilLink.send_trigger('Event271', timestamp=time_fn())
+def trig372():
+    pupilLink.send_trigger('Event272', timestamp=time_fn())
+
+triggerDict = {
+    # Commands
+    b'START_REC' : startrec,
+    b'STOP_REC' :  stoprec,
+    b'START_CAL' : startcal,
+    b'STOP_CAL' :  stopcal,
+
+    b'0': trig0,
+    b'1': trig1,
+    b'2': trig2,
+    b'3': trig3,
+    b'4': trig4,
+    b'5': trig5,
+    b'6': trig6,
+    b'7': trig7,
+    b'8': trig8,
+    b'9': trig9,
+    b'10': trig10,
+    b'11': trig11,
+    b'12': trig12,
+    b'13': trig13,
+    b'14': trig14,
+    b'15': trig15,
+    b'16': trig16,
+    b'17': trig17,
+    b'18': trig18,
+    b'19': trig19,
+    b'20': trig20,
+    b'21': trig21,
+    b'22': trig22,
+    b'23': trig23,
+    b'24': trig24,
+    b'25': trig25,
+    b'26': trig26,
+    b'27': trig27,
+    b'28': trig28,
+    b'29': trig29,
+    b'30': trig30,
+    b'31': trig31,
+    b'32': trig32,
+    b'33': trig33,
+    b'34': trig34,
+    b'35': trig35,
+    b'36': trig36,
+    b'37': trig37,
+    b'38': trig38,
+    b'39': trig39,
+    b'40': trig40,
+    b'41': trig41,
+    b'42': trig42,
+    b'43': trig43,
+    b'44': trig44,
+    b'45': trig45,
+    b'46': trig46,
+    b'47': trig47,
+    b'48': trig48,
+    b'49': trig49,
+    b'50': trig50,
+    b'51': trig51,
+    b'52': trig52,
+    b'53': trig53,
+    b'54': trig54,
+    b'55': trig55,
+    b'56': trig56,
+    b'57': trig57,
+    b'58': trig58,
+    b'59': trig59,
+    b'60': trig60,
+    b'61': trig61,
+    b'62': trig62,
+    b'63': trig63,
+    b'64': trig64,
+    b'65': trig65,
+    b'66': trig66,
+    b'67': trig67,
+    b'68': trig68,
+    b'69': trig69,
+    b'70': trig70,
+    b'71': trig71,
+    b'72': trig72,
+    b'73': trig73,
+    b'74': trig74,
+    b'75': trig75,
+    b'76': trig76,
+    b'77': trig77,
+    b'78': trig78,
+    b'79': trig79,
+    b'80': trig80,
+    b'81': trig81,
+    b'82': trig82,
+    b'83': trig83,
+    b'84': trig84,
+    b'85': trig85,
+    b'86': trig86,
+    b'87': trig87,
+    b'88': trig88,
+    b'89': trig89,
+    b'90': trig90,
+    b'91': trig91,
+    b'92': trig92,
+    b'93': trig93,
+    b'94': trig94,
+    b'95': trig95,
+    b'96': trig96,
+    b'97': trig97,
+    b'98': trig98,
+    b'99': trig99,
+    b'100': trig100,
+    b'101': trig101,
+    b'102': trig102,
+    b'103': trig103,
+    b'104': trig104,
+    b'105': trig105,
+    b'106': trig106,
+    b'107': trig107,
+    b'108': trig108,
+    b'109': trig109,
+    b'110': trig110,
+    b'111': trig111,
+    b'112': trig112,
+    b'113': trig113,
+    b'114': trig114,
+    b'115': trig115,
+    b'116': trig116,
+    b'117': trig117,
+    b'118': trig118,
+    b'119': trig119,
+    b'120': trig120,
+    b'121': trig121,
+    b'122': trig122,
+    b'123': trig123,
+    b'124': trig124,
+    b'125': trig125,
+    b'126': trig126,
+    b'127': trig127,
+    b'128': trig128,
+    b'129': trig129,
+    b'130': trig130,
+    b'131': trig131,
+    b'132': trig132,
+    b'133': trig133,
+    b'134': trig134,
+    b'135': trig135,
+    b'136': trig136,
+    b'137': trig137,
+    b'138': trig138,
+    b'139': trig139,
+    b'140': trig140,
+    b'141': trig141,
+    b'142': trig142,
+    b'143': trig143,
+    b'144': trig144,
+    b'145': trig145,
+    b'146': trig146,
+    b'147': trig147,
+    b'148': trig148,
+    b'149': trig149,
+    b'150': trig150,
+    b'151': trig151,
+    b'152': trig152,
+    b'153': trig153,
+    b'154': trig154,
+    b'155': trig155,
+    b'156': trig156,
+    b'157': trig157,
+    b'158': trig158,
+    b'159': trig159,
+    b'160': trig160,
+    b'161': trig161,
+    b'162': trig162,
+    b'163': trig163,
+    b'164': trig164,
+    b'165': trig165,
+    b'166': trig166,
+    b'167': trig167,
+    b'168': trig168,
+    b'169': trig169,
+    b'170': trig170,
+    b'171': trig171,
+    b'172': trig172,
+    b'173': trig173,
+    b'174': trig174,
+    b'175': trig175,
+    b'176': trig176,
+    b'177': trig177,
+    b'178': trig178,
+    b'179': trig179,
+    b'180': trig180,
+    b'181': trig181,
+    b'182': trig182,
+    b'183': trig183,
+    b'184': trig184,
+    b'185': trig185,
+    b'186': trig186,
+    b'187': trig187,
+    b'188': trig188,
+    b'189': trig189,
+    b'190': trig190,
+    b'191': trig191,
+    b'192': trig192,
+    b'193': trig193,
+    b'194': trig194,
+    b'195': trig195,
+    b'196': trig196,
+    b'197': trig197,
+    b'198': trig198,
+    b'199': trig199,
+    b'200': trig200,
+    b'201': trig201,
+    b'202': trig202,
+    b'203': trig203,
+    b'204': trig204,
+    b'205': trig205,
+    b'206': trig206,
+    b'207': trig207,
+    b'208': trig208,
+    b'209': trig209,
+    b'210': trig210,
+    b'211': trig211,
+    b'212': trig212,
+    b'213': trig213,
+    b'214': trig214,
+    b'215': trig215,
+    b'216': trig216,
+    b'217': trig217,
+    b'218': trig218,
+    b'219': trig219,
+    b'220': trig220,
+    b'221': trig221,
+    b'222': trig222,
+    b'223': trig223,
+    b'224': trig224,
+    b'225': trig225,
+    b'226': trig226,
+    b'227': trig227,
+    b'228': trig228,
+    b'229': trig229,
+    b'230': trig230,
+    b'231': trig231,
+    b'232': trig232,
+    b'233': trig233,
+    b'234': trig234,
+    b'235': trig235,
+    b'236': trig236,
+    b'237': trig237,
+    b'238': trig238,
+    b'239': trig239,
+    b'240': trig240,
+    b'241': trig241,
+    b'242': trig242,
+    b'243': trig243,
+    b'244': trig244,
+    b'245': trig245,
+    b'246': trig246,
+    b'247': trig247,
+    b'248': trig248,
+    b'249': trig249,
+    b'250': trig250,
+    b'251': trig251,
+    b'252': trig252,
+    b'253': trig253,
+    b'254': trig254,
+    b'255': trig255,
+    b'256': trig256,
+    b'257': trig257,
+    b'258': trig258,
+    b'259': trig259,
+    b'260': trig260,
+    b'261': trig261,
+    b'262': trig262,
+    b'263': trig263,
+    b'264': trig264,
+    b'265': trig265,
+    b'266': trig266,
+    b'267': trig267,
+    b'268': trig268,
+    b'269': trig269,
+    b'270': trig270,
+    b'271': trig271,
+    b'272': trig272,
+    b'273': trig273,
+    b'274': trig274,
+    b'275': trig275,
+    b'276': trig276,
+    b'277': trig277,
+    b'278': trig278,
+    b'279': trig279,
+    b'280': trig280,
+    b'281': trig281,
+    b'282': trig282,
+    b'283': trig283,
+    b'284': trig284,
+    b'285': trig285,
+    b'286': trig286,
+    b'287': trig287,
+    b'288': trig288,
+    b'289': trig289,
+    b'290': trig290,
+    b'291': trig291,
+    b'292': trig292,
+    b'293': trig293,
+    b'294': trig294,
+    b'295': trig295,
+    b'296': trig296,
+    b'297': trig297,
+    b'298': trig298,
+    b'299': trig299,
+    b'300': trig300,
+    b'301': trig301,
+    b'302': trig302,
+    b'303': trig303,
+    b'304': trig304,
+    b'305': trig305,
+    b'306': trig306,
+    b'307': trig307,
+    b'308': trig308,
+    b'309': trig309,
+    b'310': trig310,
+    b'311': trig311,
+    b'312': trig312,
+    b'313': trig313,
+    b'314': trig314,
+    b'315': trig315,
+    b'316': trig316,
+    b'317': trig317,
+    b'318': trig318,
+    b'319': trig319,
+    b'320': trig320,
+    b'321': trig321,
+    b'322': trig322,
+    b'323': trig323,
+    b'324': trig324,
+    b'325': trig325,
+    b'326': trig326,
+    b'327': trig327,
+    b'328': trig328,
+    b'329': trig329,
+    b'330': trig330,
+    b'331': trig331,
+    b'332': trig332,
+    b'333': trig333,
+    b'334': trig334,
+    b'335': trig335,
+    b'336': trig336,
+    b'337': trig337,
+    b'338': trig338,
+    b'339': trig339,
+    b'340': trig340,
+    b'341': trig341,
+    b'342': trig342,
+    b'343': trig343,
+    b'344': trig344,
+    b'345': trig345,
+    b'346': trig346,
+    b'347': trig347,
+    b'348': trig348,
+    b'349': trig349,
+    b'350': trig350,
+    b'351': trig351,
+    b'352': trig352,
+    b'353': trig353,
+    b'354': trig354,
+    b'355': trig355,
+    b'356': trig356,
+    b'357': trig357,
+    b'358': trig358,
+    b'359': trig359,
+    b'360': trig360,
+    b'361': trig361,
+    b'362': trig362,
+    b'363': trig363,
+    b'364': trig364,
+    b'365': trig365,
+    b'366': trig366,
+    b'367': trig367,
+    b'368': trig368,
+    b'369': trig369,
+    b'370': trig370,
+    b'371': trig371,
+    b'372': trig372
+    }
+
+## start listening to udpListeningSock
+
+while True:
+    data, time = udpListeningSock.sock_listen()
+    print(data, time)
+    if data:
+       triggerDict[data]()
+       logging.warning(" ".join( [str(data), str(time)] ) )

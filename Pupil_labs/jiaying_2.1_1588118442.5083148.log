@@ -1,0 +1,630 @@
+2020-04-28 17:00:42,508:root:Logging initialised at <FileHandler /Users/newxjy/Dropbox/VICE/JT/STRATEGY/Pupil_labs/jiaying_2.1_1588118442.5083148.log (DEBUG)>.
+2020-04-28 17:00:42,509:mm_modules.pyudp:Creating UDP socket object
+2020-04-28 17:00:42,509:mm_modules.pyudp:Socket bound to 127.0.0.1:11111.
+2020-04-28 17:00:42,510:mm_modules.pupilsocket:Creating zeromq socket object
+2020-04-28 17:00:42,510:mm_modules.pupilsocket:ZMQ socket bound to 127.0.0.1 on port 11111
+2020-04-28 17:00:42,511:root:Pupil socket connected.
+2020-04-28 17:00:42,511:mm_modules.pupilsocket:Payload sent: b'\x83\xa7subject\xacstart_plugin\xa4name\xabLog_History\xa4args\x80'
+2020-04-28 17:00:42,514:mm_modules.pupilsocket:Payload sent: b'\x83\xa7subject\xacstart_plugin\xa4name\xb2Annotation_Capture\xa4args\x80'
+2020-04-28 17:00:42,516:root:Pupil-Recorder Annotations plugin prompted.
+2020-04-28 17:00:42,520:mm_modules.pupilsocket:Timesync successful.
+2020-04-28 17:00:42,520:root:Pupil-Recorder time set.
+2020-04-28 17:00:42,520:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xadDummy Trigger\xa9timestamp\xcbA\xd7\xaa0\xea\xa1R\x12\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:04:13,639:mm_modules.pyudp:Received buffer: b'STOP_REC'.
+2020-04-28 17:04:13,669:mm_modules.pupilsocket:OK
+2020-04-28 17:04:13,671:root:b'STOP_REC' 1588118653639
+2020-04-28 17:04:13,672:mm_modules.pyudp:Received buffer: b'START_REC'.
+2020-04-28 17:04:13,678:mm_modules.pupilsocket:OK
+2020-04-28 17:04:13,678:root:b'START_REC' 1588118653672
+2020-04-28 17:04:15,429:mm_modules.pyudp:Received buffer: b'START_CAL'.
+2020-04-28 17:04:15,433:mm_modules.pupilsocket:OK
+2020-04-28 17:04:15,433:root:b'START_CAL' 1588118655429
+2020-04-28 17:04:15,433:mm_modules.pyudp:Received buffer: b'0'.
+2020-04-28 17:04:15,433:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa6Event0\xa9timestamp\xcbA\xd7\xaa1\x1f\xdb\xc3\xd3\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:04:15,435:root:b'0' 1588118655434
+2020-04-28 17:04:51,283:mm_modules.pyudp:Received buffer: b'STOP_CAL'.
+2020-04-28 17:04:51,284:mm_modules.pupilsocket:OK
+2020-04-28 17:04:51,284:root:b'STOP_CAL' 1588118691283
+2020-04-28 17:04:52,285:mm_modules.pyudp:Received buffer: b'0'.
+2020-04-28 17:04:52,285:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa6Event0\xa9timestamp\xcbA\xd7\xaa1)\x12H0\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:04:52,288:root:b'0' 1588118692285
+2020-04-28 17:04:57,068:mm_modules.pyudp:Received buffer: b'1'.
+2020-04-28 17:04:57,069:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa6Event1\xa9timestamp\xcbA\xd7\xaa1*Dn\xb5\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:04:57,078:root:b'1' 1588118697069
+2020-04-28 17:05:00,161:mm_modules.pyudp:Received buffer: b'1'.
+2020-04-28 17:05:00,162:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa6Event1\xa9timestamp\xcbA\xd7\xaa1+\n_\xfe\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:05:00,178:root:b'1' 1588118700162
+2020-04-28 17:05:01,001:mm_modules.pyudp:Received buffer: b'2'.
+2020-04-28 17:05:01,001:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa6Event2\xa9timestamp\xcbA\xd7\xaa1+@\x1b\xeb\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:05:01,003:root:b'2' 1588118701001
+2020-04-28 17:05:04,124:mm_modules.pyudp:Received buffer: b'2'.
+2020-04-28 17:05:04,125:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa6Event2\xa9timestamp\xcbA\xd7\xaa1,\x08\r\x17\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:05:04,198:root:b'2' 1588118704125
+2020-04-28 17:05:05,329:mm_modules.pyudp:Received buffer: b'3'.
+2020-04-28 17:05:05,329:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa6Event3\xa9timestamp\xcbA\xd7\xaa1,U\x14n\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:05:05,337:root:b'3' 1588118705329
+2020-04-28 17:05:08,431:mm_modules.pyudp:Received buffer: b'3'.
+2020-04-28 17:05:08,431:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa6Event3\xa9timestamp\xcbA\xd7\xaa1-\x1b\x9a\x80\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:05:08,433:root:b'3' 1588118708431
+2020-04-28 17:05:09,666:mm_modules.pyudp:Received buffer: b'4'.
+2020-04-28 17:05:09,668:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa6Event4\xa9timestamp\xcbA\xd7\xaa1-j\xbe3\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:05:09,683:root:b'4' 1588118709666
+2020-04-28 17:05:12,934:mm_modules.pyudp:Received buffer: b'4'.
+2020-04-28 17:05:12,935:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa6Event4\xa9timestamp\xcbA\xd7\xaa1.;\xdb\xcb\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:05:12,978:root:b'4' 1588118712934
+2020-04-28 17:05:14,361:mm_modules.pyudp:Received buffer: b'5'.
+2020-04-28 17:05:14,361:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa6Event5\xa9timestamp\xcbA\xd7\xaa1.\x97%)\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:05:14,372:root:b'5' 1588118714361
+2020-04-28 17:05:17,550:mm_modules.pyudp:Received buffer: b'5'.
+2020-04-28 17:05:17,551:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa6Event5\xa9timestamp\xcbA\xd7\xaa1/cI5\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:05:17,559:root:b'5' 1588118717550
+2020-04-28 17:05:18,781:mm_modules.pyudp:Received buffer: b'6'.
+2020-04-28 17:05:18,782:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa6Event6\xa9timestamp\xcbA\xd7\xaa1/\xb2\x10^\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:05:18,804:root:b'6' 1588118718782
+2020-04-28 17:05:21,958:mm_modules.pyudp:Received buffer: b'6'.
+2020-04-28 17:05:21,959:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa6Event6\xa9timestamp\xcbA\xd7\xaa10}g\xbe\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:05:21,975:root:b'6' 1588118721958
+2020-04-28 17:05:24,133:mm_modules.pyudp:Received buffer: b'7'.
+2020-04-28 17:05:24,133:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa6Event7\xa9timestamp\xcbA\xd7\xaa11\x08\x90\x8e\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:05:24,136:root:b'7' 1588118724133
+2020-04-28 17:05:27,203:mm_modules.pyudp:Received buffer: b'7'.
+2020-04-28 17:05:27,221:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa6Event7\xa9timestamp\xcbA\xd7\xaa11\xce,E\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:05:27,230:root:b'7' 1588118727204
+2020-04-28 17:05:28,342:mm_modules.pyudp:Received buffer: b'8'.
+2020-04-28 17:05:28,343:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa6Event8\xa9timestamp\xcbA\xd7\xaa12\x15\xf1\x1c\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:05:28,352:root:b'8' 1588118728342
+2020-04-28 17:05:31,532:mm_modules.pyudp:Received buffer: b'8'.
+2020-04-28 17:05:31,540:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa6Event8\xa9timestamp\xcbA\xd7\xaa12\xe2\x97\xc4\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:05:31,587:root:b'8' 1588118731532
+2020-04-28 17:05:32,825:mm_modules.pyudp:Received buffer: b'9'.
+2020-04-28 17:05:32,826:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa6Event9\xa9timestamp\xcbA\xd7\xaa134\xdb\xd7\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:05:32,858:root:b'9' 1588118732826
+2020-04-28 17:05:35,934:mm_modules.pyudp:Received buffer: b'9'.
+2020-04-28 17:05:35,935:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa6Event9\xa9timestamp\xcbA\xd7\xaa13\xfb\xdb\xf1\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:05:35,937:root:b'9' 1588118735935
+2020-04-28 17:05:37,014:mm_modules.pyudp:Received buffer: b'10'.
+2020-04-28 17:05:37,015:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event10\xa9timestamp\xcbA\xd7\xaa14@\xf7\xd7\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:05:37,023:root:b'10' 1588118737014
+2020-04-28 17:05:40,716:mm_modules.pyudp:Received buffer: b'10'.
+2020-04-28 17:05:40,717:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event10\xa9timestamp\xcbA\xd7\xaa15-\xd9\x80\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:05:40,742:root:b'10' 1588118740716
+2020-04-28 17:05:42,042:mm_modules.pyudp:Received buffer: b'11'.
+2020-04-28 17:05:42,044:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event11\xa9timestamp\xcbA\xd7\xaa15\x82\xd58\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:05:42,064:root:b'11' 1588118742042
+2020-04-28 17:05:45,303:mm_modules.pyudp:Received buffer: b'11'.
+2020-04-28 17:05:45,311:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event11\xa9timestamp\xcbA\xd7\xaa16S\xc2\xc5\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:05:45,338:root:b'11' 1588118745304
+2020-04-28 17:05:46,504:mm_modules.pyudp:Received buffer: b'12'.
+2020-04-28 17:05:46,505:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event12\xa9timestamp\xcbA\xd7\xaa16\xa0Y2\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:05:46,513:root:b'12' 1588118746504
+2020-04-28 17:05:49,715:mm_modules.pyudp:Received buffer: b'12'.
+2020-04-28 17:05:49,716:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event12\xa9timestamp\xcbA\xd7\xaa17m\xd5Z\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:05:49,721:root:b'12' 1588118749716
+2020-04-28 17:05:50,864:mm_modules.pyudp:Received buffer: b'13'.
+2020-04-28 17:05:50,867:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event13\xa9timestamp\xcbA\xd7\xaa17\xb7|\xdd\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:05:50,882:root:b'13' 1588118750865
+2020-04-28 17:05:54,076:mm_modules.pyudp:Received buffer: b'13'.
+2020-04-28 17:05:54,076:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event13\xa9timestamp\xcbA\xd7\xaa18\x84\xe6\x86\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:05:54,081:root:b'13' 1588118754076
+2020-04-28 17:05:55,407:mm_modules.pyudp:Received buffer: b'14'.
+2020-04-28 17:05:55,411:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event14\xa9timestamp\xcbA\xd7\xaa18\xda?\x14\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:05:55,416:root:b'14' 1588118755407
+2020-04-28 17:05:58,567:mm_modules.pyudp:Received buffer: b'14'.
+2020-04-28 17:05:58,570:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event14\xa9timestamp\xcbA\xd7\xaa19\xa4y!\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:05:58,575:root:b'14' 1588118758568
+2020-04-28 17:05:59,965:mm_modules.pyudp:Received buffer: b'15'.
+2020-04-28 17:05:59,966:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event15\xa9timestamp\xcbA\xd7\xaa19\xfd\xd3t\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:05:59,974:root:b'15' 1588118759965
+2020-04-28 17:06:03,156:mm_modules.pyudp:Received buffer: b'15'.
+2020-04-28 17:06:03,157:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event15\xa9timestamp\xcbA\xd7\xaa1:\xca\x13\xe0\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:06:03,160:root:b'15' 1588118763157
+2020-04-28 17:06:04,227:mm_modules.pyudp:Received buffer: b'16'.
+2020-04-28 17:06:04,228:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event16\xa9timestamp\xcbA\xd7\xaa1;\x0e\x9f\x0e\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:06:04,236:root:b'16' 1588118764228
+2020-04-28 17:06:07,462:mm_modules.pyudp:Received buffer: b'16'.
+2020-04-28 17:06:07,462:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event16\xa9timestamp\xcbA\xd7\xaa1;\xdd\x97\xab\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:06:07,505:root:b'16' 1588118767461
+2020-04-28 17:06:09,147:mm_modules.pyudp:Received buffer: b'17'.
+2020-04-28 17:06:09,147:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event17\xa9timestamp\xcbA\xd7\xaa1<Ip\xc5\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:06:09,157:root:b'17' 1588118769147
+2020-04-28 17:06:12,440:mm_modules.pyudp:Received buffer: b'17'.
+2020-04-28 17:06:12,443:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event17\xa9timestamp\xcbA\xd7\xaa1=\x1cZ\xac\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:06:12,449:root:b'17' 1588118772441
+2020-04-28 17:06:13,586:mm_modules.pyudp:Received buffer: b'18'.
+2020-04-28 17:06:13,587:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event18\xa9timestamp\xcbA\xd7\xaa1=e\x95G\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:06:13,632:root:b'18' 1588118773586
+2020-04-28 17:06:16,792:mm_modules.pyudp:Received buffer: b'18'.
+2020-04-28 17:06:16,798:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event18\xa9timestamp\xcbA\xd7\xaa1>2\xbef\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:06:16,801:root:b'18' 1588118776792
+2020-04-28 17:06:18,032:mm_modules.pyudp:Received buffer: b'19'.
+2020-04-28 17:06:18,035:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event19\xa9timestamp\xcbA\xd7\xaa1>\x82@\xaf\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:06:18,037:root:b'19' 1588118778032
+2020-04-28 17:06:21,706:mm_modules.pyudp:Received buffer: b'19'.
+2020-04-28 17:06:21,708:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event19\xa9timestamp\xcbA\xd7\xaa1?mC\x9e\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:06:21,729:root:b'19' 1588118781706
+2020-04-28 17:06:23,266:mm_modules.pyudp:Received buffer: b'20'.
+2020-04-28 17:06:23,267:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event20\xa9timestamp\xcbA\xd7\xaa1?\xd1\x16;\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:06:23,323:root:b'20' 1588118783266
+2020-04-28 17:06:26,495:mm_modules.pyudp:Received buffer: b'20'.
+2020-04-28 17:06:26,495:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event20\xa9timestamp\xcbA\xd7\xaa1@\x9f\xb8\xed\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:06:26,506:root:b'20' 1588118786495
+2020-04-28 17:06:27,683:mm_modules.pyudp:Received buffer: b'21'.
+2020-04-28 17:06:27,684:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event21\xa9timestamp\xcbA\xd7\xaa1@\xeb\xca!\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:06:27,695:root:b'21' 1588118787683
+2020-04-28 17:06:30,916:mm_modules.pyudp:Received buffer: b'21'.
+2020-04-28 17:06:30,918:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event21\xa9timestamp\xcbA\xd7\xaa1A\xba\xcd\x9e\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:06:30,977:root:b'21' 1588118790917
+2020-04-28 17:06:31,970:mm_modules.pyudp:Received buffer: b'22'.
+2020-04-28 17:06:31,972:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event22\xa9timestamp\xcbA\xd7\xaa1A\xfe+4\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:06:32,003:root:b'22' 1588118791970
+2020-04-28 17:06:35,210:mm_modules.pyudp:Received buffer: b'22'.
+2020-04-28 17:06:35,211:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event22\xa9timestamp\xcbA\xd7\xaa1B\xcd\x84s\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:06:35,217:root:b'22' 1588118795210
+2020-04-28 17:06:36,465:mm_modules.pyudp:Received buffer: b'23'.
+2020-04-28 17:06:36,467:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event23\xa9timestamp\xcbA\xd7\xaa1C\x1d\xe2\x7f\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:06:36,469:root:b'23' 1588118796466
+2020-04-28 17:06:39,669:mm_modules.pyudp:Received buffer: b'23'.
+2020-04-28 17:06:39,670:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event23\xa9timestamp\xcbA\xd7\xaa1C\xea\xe4e\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:06:39,684:root:b'23' 1588118799669
+2020-04-28 17:06:41,074:mm_modules.pyudp:Received buffer: b'24'.
+2020-04-28 17:06:41,074:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event24\xa9timestamp\xcbA\xd7\xaa1DD\xc73\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:06:41,080:root:b'24' 1588118801074
+2020-04-28 17:06:44,239:mm_modules.pyudp:Received buffer: b'24'.
+2020-04-28 17:06:44,241:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event24\xa9timestamp\xcbA\xd7\xaa1E\x0fr\xff\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:06:44,243:root:b'24' 1588118804239
+2020-04-28 17:06:45,653:mm_modules.pyudp:Received buffer: b'25'.
+2020-04-28 17:06:45,654:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event25\xa9timestamp\xcbA\xd7\xaa1Ei\xd6R\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:06:45,664:root:b'25' 1588118805653
+2020-04-28 17:06:48,885:mm_modules.pyudp:Received buffer: b'25'.
+2020-04-28 17:06:48,887:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event25\xa9timestamp\xcbA\xd7\xaa1F8\xbf\xd7\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:06:48,895:root:b'25' 1588118808886
+2020-04-28 17:06:49,988:mm_modules.pyudp:Received buffer: b'26'.
+2020-04-28 17:06:49,990:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event26\xa9timestamp\xcbA\xd7\xaa1F\x7fM\xfd\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:06:50,001:root:b'26' 1588118809988
+2020-04-28 17:06:53,204:mm_modules.pyudp:Received buffer: b'26'.
+2020-04-28 17:06:53,204:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event26\xa9timestamp\xcbA\xd7\xaa1GM\x13\xb1\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:06:53,208:root:b'26' 1588118813204
+2020-04-28 17:06:54,758:mm_modules.pyudp:Received buffer: b'27'.
+2020-04-28 17:06:54,760:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event27\xa9timestamp\xcbA\xd7\xaa1G\xb0\x9dc\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:06:54,772:root:b'27' 1588118814758
+2020-04-28 17:06:57,998:mm_modules.pyudp:Received buffer: b'27'.
+2020-04-28 17:06:58,002:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event27\xa9timestamp\xcbA\xd7\xaa1H\x80\x1d.\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:06:58,004:root:b'27' 1588118817998
+2020-04-28 17:06:59,740:mm_modules.pyudp:Received buffer: b'28'.
+2020-04-28 17:06:59,742:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event28\xa9timestamp\xcbA\xd7\xaa1H\xefw-\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:06:59,744:root:b'28' 1588118819741
+2020-04-28 17:07:02,924:mm_modules.pyudp:Received buffer: b'28'.
+2020-04-28 17:07:02,925:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event28\xa9timestamp\xcbA\xd7\xaa1I\xbb4Y\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:07:02,929:root:b'28' 1588118822925
+2020-04-28 17:07:04,049:mm_modules.pyudp:Received buffer: b'29'.
+2020-04-28 17:07:04,051:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event29\xa9timestamp\xcbA\xd7\xaa1J\x03<\x11\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:07:04,070:root:b'29' 1588118824050
+2020-04-28 17:07:07,295:mm_modules.pyudp:Received buffer: b'29'.
+2020-04-28 17:07:07,295:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event29\xa9timestamp\xcbA\xd7\xaa1J\xd2\xe7X\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:07:07,297:root:b'29' 1588118827295
+2020-04-28 17:07:08,369:mm_modules.pyudp:Received buffer: b'30'.
+2020-04-28 17:07:08,370:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event30\xa9timestamp\xcbA\xd7\xaa1K\x17\xa8;\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:07:08,376:root:b'30' 1588118828369
+2020-04-28 17:07:11,643:mm_modules.pyudp:Received buffer: b'30'.
+2020-04-28 17:07:11,644:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event30\xa9timestamp\xcbA\xd7\xaa1K\xe99e\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:07:11,648:root:b'30' 1588118831643
+2020-04-28 17:07:13,081:mm_modules.pyudp:Received buffer: b'31'.
+2020-04-28 17:07:13,082:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event31\xa9timestamp\xcbA\xd7\xaa1LEA\xbc\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:07:13,085:root:b'31' 1588118833081
+2020-04-28 17:07:16,827:mm_modules.pyudp:Received buffer: b'31'.
+2020-04-28 17:07:16,829:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event31\xa9timestamp\xcbA\xd7\xaa1M5\x05\xff\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:07:16,842:root:b'31' 1588118836827
+2020-04-28 17:07:17,911:mm_modules.pyudp:Received buffer: b'32'.
+2020-04-28 17:07:17,912:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event32\xa9timestamp\xcbA\xd7\xaa1Mzb\xf2\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:07:17,930:root:b'32' 1588118837911
+2020-04-28 17:07:21,161:mm_modules.pyudp:Received buffer: b'32'.
+2020-04-28 17:07:21,166:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event32\xa9timestamp\xcbA\xd7\xaa1NJc\xbb\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:07:21,181:root:b'32' 1588118841161
+2020-04-28 17:07:22,194:mm_modules.pyudp:Received buffer: b'33'.
+2020-04-28 17:07:22,195:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event33\xa9timestamp\xcbA\xd7\xaa1N\x8c\x80o\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:07:22,373:root:b'33' 1588118842194
+2020-04-28 17:07:25,800:mm_modules.pyudp:Received buffer: b'33'.
+2020-04-28 17:07:25,804:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event33\xa9timestamp\xcbA\xd7\xaa1Osr\x82\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:07:25,805:root:b'33' 1588118845801
+2020-04-28 17:07:27,623:mm_modules.pyudp:Received buffer: b'34'.
+2020-04-28 17:07:27,625:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event34\xa9timestamp\xcbA\xd7\xaa1O\xe7\xffu\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:07:27,627:root:b'34' 1588118847623
+2020-04-28 17:07:30,770:mm_modules.pyudp:Received buffer: b'34'.
+2020-04-28 17:07:30,771:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event34\xa9timestamp\xcbA\xd7\xaa1P\xb1U\xac\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:07:30,781:root:b'34' 1588118850770
+2020-04-28 17:07:31,757:mm_modules.pyudp:Received buffer: b'35'.
+2020-04-28 17:07:31,759:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event35\xa9timestamp\xcbA\xd7\xaa1P\xf0\x9a\xd5\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:07:31,765:root:b'35' 1588118851757
+2020-04-28 17:07:34,948:mm_modules.pyudp:Received buffer: b'35'.
+2020-04-28 17:07:34,950:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event35\xa9timestamp\xcbA\xd7\xaa1Q\xbc\xd0[\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:07:34,959:root:b'35' 1588118854948
+2020-04-28 17:07:36,592:mm_modules.pyudp:Received buffer: b'36'.
+2020-04-28 17:07:36,593:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event36\xa9timestamp\xcbA\xd7\xaa1R%\xf3N\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:07:36,605:root:b'36' 1588118856592
+2020-04-28 17:07:39,746:mm_modules.pyudp:Received buffer: b'36'.
+2020-04-28 17:07:39,747:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event36\xa9timestamp\xcbA\xd7\xaa1R\xef\xcf\xa2\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:07:39,755:root:b'36' 1588118859746
+2020-04-28 17:07:41,017:mm_modules.pyudp:Received buffer: b'37'.
+2020-04-28 17:07:41,018:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event37\xa9timestamp\xcbA\xd7\xaa1SA$\x0c\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:07:41,083:root:b'37' 1588118861017
+2020-04-28 17:07:44,238:mm_modules.pyudp:Received buffer: b'37'.
+2020-04-28 17:07:44,238:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event37\xa9timestamp\xcbA\xd7\xaa1T\x0fEx\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:07:44,244:root:b'37' 1588118864238
+2020-04-28 17:07:45,291:mm_modules.pyudp:Received buffer: b'38'.
+2020-04-28 17:07:45,302:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event38\xa9timestamp\xcbA\xd7\xaa1TR\xc3L\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:07:45,303:root:b'38' 1588118865291
+2020-04-28 17:07:48,403:mm_modules.pyudp:Received buffer: b'38'.
+2020-04-28 17:07:48,404:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event38\xa9timestamp\xcbA\xd7\xaa1U\x19\xdb\xa5\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:07:48,454:root:b'38' 1588118868403
+2020-04-28 17:07:49,580:mm_modules.pyudp:Received buffer: b'39'.
+2020-04-28 17:07:49,580:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event39\xa9timestamp\xcbA\xd7\xaa1Ue$\x9a\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:07:49,590:root:b'39' 1588118869580
+2020-04-28 17:07:52,850:mm_modules.pyudp:Received buffer: b'39'.
+2020-04-28 17:07:52,852:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event39\xa9timestamp\xcbA\xd7\xaa1V6\x89\xad\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:07:52,853:root:b'39' 1588118872850
+2020-04-28 17:07:54,259:mm_modules.pyudp:Received buffer: b'40'.
+2020-04-28 17:07:54,261:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event40\xa9timestamp\xcbA\xd7\xaa1V\x90\xb9\x91\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:07:54,262:root:b'40' 1588118874259
+2020-04-28 17:07:57,485:mm_modules.pyudp:Received buffer: b'40'.
+2020-04-28 17:07:57,486:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event40\xa9timestamp\xcbA\xd7\xaa1W_\x19+\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:07:57,488:root:b'40' 1588118877486
+2020-04-28 17:07:58,537:mm_modules.pyudp:Received buffer: b'41'.
+2020-04-28 17:07:58,538:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event41\xa9timestamp\xcbA\xd7\xaa1W\xa2ef\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:07:58,582:root:b'41' 1588118878537
+2020-04-28 17:08:02,089:mm_modules.pyudp:Received buffer: b'41'.
+2020-04-28 17:08:02,090:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event41\xa9timestamp\xcbA\xd7\xaa1X\x85\xc3\xce\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:08:02,232:root:b'41' 1588118882089
+2020-04-28 17:08:04,132:mm_modules.pyudp:Received buffer: b'42'.
+2020-04-28 17:08:04,137:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event42\xa9timestamp\xcbA\xd7\xaa1Y\x08\xc2\xd6\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:08:04,169:root:b'42' 1588118884132
+2020-04-28 17:08:07,360:mm_modules.pyudp:Received buffer: b'42'.
+2020-04-28 17:08:07,361:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event42\xa9timestamp\xcbA\xd7\xaa1Y\xd7 \xe1\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:08:07,405:root:b'42' 1588118887360
+2020-04-28 17:08:09,335:mm_modules.pyudp:Received buffer: b'43'.
+2020-04-28 17:08:09,336:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event43\xa9timestamp\xcbA\xd7\xaa1ZU\x85\x90\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:08:09,337:root:b'43' 1588118889336
+2020-04-28 17:08:12,433:mm_modules.pyudp:Received buffer: b'43'.
+2020-04-28 17:08:12,433:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event43\xa9timestamp\xcbA\xd7\xaa1[\x1b\xc3e\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:08:12,657:root:b'43' 1588118892434
+2020-04-28 17:08:13,599:mm_modules.pyudp:Received buffer: b'44'.
+2020-04-28 17:08:13,599:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event44\xa9timestamp\xcbA\xd7\xaa1[f_\xc4\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:08:13,606:root:b'44' 1588118893599
+2020-04-28 17:08:16,704:mm_modules.pyudp:Received buffer: b'44'.
+2020-04-28 17:08:16,706:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event44\xa9timestamp\xcbA\xd7\xaa1\\-1\xbd\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:08:16,722:root:b'44' 1588118896704
+2020-04-28 17:08:18,017:mm_modules.pyudp:Received buffer: b'45'.
+2020-04-28 17:08:18,019:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event45\xa9timestamp\xcbA\xd7\xaa1\\\x81<X\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:08:18,026:root:b'45' 1588118898016
+2020-04-28 17:08:21,362:mm_modules.pyudp:Received buffer: b'45'.
+2020-04-28 17:08:21,364:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event45\xa9timestamp\xcbA\xd7\xaa1]WR\xca\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:08:21,367:root:b'45' 1588118901363
+2020-04-28 17:08:22,285:mm_modules.pyudp:Received buffer: b'46'.
+2020-04-28 17:08:22,286:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event46\xa9timestamp\xcbA\xd7\xaa1]\x92L\x95\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:08:22,294:root:b'46' 1588118902285
+2020-04-28 17:08:25,569:mm_modules.pyudp:Received buffer: b'46'.
+2020-04-28 17:08:25,570:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event46\xa9timestamp\xcbA\xd7\xaa1^dyd\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:08:25,572:root:b'46' 1588118905569
+2020-04-28 17:08:26,710:mm_modules.pyudp:Received buffer: b'47'.
+2020-04-28 17:08:26,710:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event47\xa9timestamp\xcbA\xd7\xaa1^\xad{\x91\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:08:26,729:root:b'47' 1588118906710
+2020-04-28 17:08:29,921:mm_modules.pyudp:Received buffer: b'47'.
+2020-04-28 17:08:29,922:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event47\xa9timestamp\xcbA\xd7\xaa1_z\xf9/\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:08:29,942:root:b'47' 1588118909921
+2020-04-28 17:08:31,312:mm_modules.pyudp:Received buffer: b'48'.
+2020-04-28 17:08:31,313:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event48\xa9timestamp\xcbA\xd7\xaa1_\xd4\x06\xd9\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:08:31,317:root:b'48' 1588118911313
+2020-04-28 17:08:34,509:mm_modules.pyudp:Received buffer: b'48'.
+2020-04-28 17:08:34,510:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event48\xa9timestamp\xcbA\xd7\xaa1`\xa0\xa2<\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:08:34,524:root:b'48' 1588118914509
+2020-04-28 17:08:35,504:mm_modules.pyudp:Received buffer: b'49'.
+2020-04-28 17:08:35,505:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event49\xa9timestamp\xcbA\xd7\xaa1`\xe0V\xeb\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:08:35,507:root:b'49' 1588118915503
+2020-04-28 17:08:38,587:mm_modules.pyudp:Received buffer: b'49'.
+2020-04-28 17:08:38,589:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event49\xa9timestamp\xcbA\xd7\xaa1a\xa5\x99\xd5\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:08:38,595:root:b'49' 1588118918587
+2020-04-28 17:08:40,371:mm_modules.pyudp:Received buffer: b'50'.
+2020-04-28 17:08:40,372:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event50\xa9timestamp\xcbA\xd7\xaa1b\x17\xd2\x14\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:08:40,374:root:b'50' 1588118920372
+2020-04-28 17:08:43,548:mm_modules.pyudp:Received buffer: b'50'.
+2020-04-28 17:08:43,549:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event50\xa9timestamp\xcbA\xd7\xaa1b\xe3#_\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:08:43,554:root:b'50' 1588118923549
+2020-04-28 17:08:50,947:mm_modules.pyudp:Received buffer: b'51'.
+2020-04-28 17:08:50,947:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event51\xa9timestamp\xcbA\xd7\xaa1d\xbc\xa7\xdf\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:08:50,964:root:b'51' 1588118930947
+2020-04-28 17:08:54,124:mm_modules.pyudp:Received buffer: b'51'.
+2020-04-28 17:08:54,130:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event51\xa9timestamp\xcbA\xd7\xaa1e\x88S.\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:08:54,132:root:b'51' 1588118934125
+2020-04-28 17:08:55,482:mm_modules.pyudp:Received buffer: b'52'.
+2020-04-28 17:08:55,484:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event52\xa9timestamp\xcbA\xd7\xaa1e\xde\xfc]\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:08:55,489:root:b'52' 1588118935482
+2020-04-28 17:08:58,618:mm_modules.pyudp:Received buffer: b'52'.
+2020-04-28 17:08:58,619:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event52\xa9timestamp\xcbA\xd7\xaa1f\xa7\x9f\xdb\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:08:58,624:root:b'52' 1588118938619
+2020-04-28 17:08:59,964:mm_modules.pyudp:Received buffer: b'53'.
+2020-04-28 17:08:59,964:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event53\xa9timestamp\xcbA\xd7\xaa1f\xfd\xb6N\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:09:00,018:root:b'53' 1588118939964
+2020-04-28 17:09:03,217:mm_modules.pyudp:Received buffer: b'53'.
+2020-04-28 17:09:03,218:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event53\xa9timestamp\xcbA\xd7\xaa1g\xcd\xf2J\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:09:03,234:root:b'53' 1588118943217
+2020-04-28 17:09:05,335:mm_modules.pyudp:Received buffer: b'54'.
+2020-04-28 17:09:05,336:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event54\xa9timestamp\xcbA\xd7\xaa1hU\x7f\xf5\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:09:05,345:root:b'54' 1588118945335
+2020-04-28 17:09:08,486:mm_modules.pyudp:Received buffer: b'54'.
+2020-04-28 17:09:08,488:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event54\xa9timestamp\xcbA\xd7\xaa1i\x1f4\x8b\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:09:08,500:root:b'54' 1588118948486
+2020-04-28 17:09:10,022:mm_modules.pyudp:Received buffer: b'55'.
+2020-04-28 17:09:10,023:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event55\xa9timestamp\xcbA\xd7\xaa1i\x81}\x0b\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:09:10,037:root:b'55' 1588118950022
+2020-04-28 17:09:13,241:mm_modules.pyudp:Received buffer: b'55'.
+2020-04-28 17:09:13,242:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event55\xa9timestamp\xcbA\xd7\xaa1jO\x81\xfa\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:09:13,253:root:b'55' 1588118953241
+2020-04-28 17:09:14,457:mm_modules.pyudp:Received buffer: b'56'.
+2020-04-28 17:09:14,460:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event56\xa9timestamp\xcbA\xd7\xaa1j\x9dZ\xbc\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:09:14,468:root:b'56' 1588118954458
+2020-04-28 17:09:17,771:mm_modules.pyudp:Received buffer: b'56'.
+2020-04-28 17:09:17,772:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event56\xa9timestamp\xcbA\xd7\xaa1kqr\xb4\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:09:17,774:root:b'56' 1588118957772
+2020-04-28 17:09:19,218:mm_modules.pyudp:Received buffer: b'57'.
+2020-04-28 17:09:19,219:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event57\xa9timestamp\xcbA\xd7\xaa1k\xce\x07\xa2\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:09:19,220:root:b'57' 1588118959219
+2020-04-28 17:09:23,001:mm_modules.pyudp:Received buffer: b'57'.
+2020-04-28 17:09:23,005:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event57\xa9timestamp\xcbA\xd7\xaa1l\xc0 2\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:09:23,006:root:b'57' 1588118963002
+2020-04-28 17:09:24,441:mm_modules.pyudp:Received buffer: b'58'.
+2020-04-28 17:09:24,442:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event58\xa9timestamp\xcbA\xd7\xaa1m\x1cKb\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:09:24,480:root:b'58' 1588118964442
+2020-04-28 17:09:27,608:mm_modules.pyudp:Received buffer: b'58'.
+2020-04-28 17:09:27,609:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event58\xa9timestamp\xcbA\xd7\xaa1m\xe6\xf3\x01\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:09:27,610:root:b'58' 1588118967608
+2020-04-28 17:09:28,849:mm_modules.pyudp:Received buffer: b'59'.
+2020-04-28 17:09:28,851:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event59\xa9timestamp\xcbA\xd7\xaa1n6\x80\x84\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:09:28,853:root:b'59' 1588118968849
+2020-04-28 17:09:31,976:mm_modules.pyudp:Received buffer: b'59'.
+2020-04-28 17:09:31,977:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event59\xa9timestamp\xcbA\xd7\xaa1n\xfe\x8e\x8f\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:09:31,980:root:b'59' 1588118971975
+2020-04-28 17:09:33,367:mm_modules.pyudp:Received buffer: b'60'.
+2020-04-28 17:09:33,368:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event60\xa9timestamp\xcbA\xd7\xaa1oW\x90\x86\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:09:33,372:root:b'60' 1588118973368
+2020-04-28 17:09:36,595:mm_modules.pyudp:Received buffer: b'60'.
+2020-04-28 17:09:36,597:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event60\xa9timestamp\xcbA\xd7\xaa1p&.^\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:09:36,608:root:b'60' 1588118976596
+2020-04-28 17:09:37,740:mm_modules.pyudp:Received buffer: b'61'.
+2020-04-28 17:09:37,741:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event61\xa9timestamp\xcbA\xd7\xaa1pom\x8c\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:09:38,041:root:b'61' 1588118977740
+2020-04-28 17:09:40,891:mm_modules.pyudp:Received buffer: b'61'.
+2020-04-28 17:09:40,893:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event61\xa9timestamp\xcbA\xd7\xaa1q9!G\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:09:40,905:root:b'61' 1588118980892
+2020-04-28 17:09:42,087:mm_modules.pyudp:Received buffer: b'62'.
+2020-04-28 17:09:42,089:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event62\xa9timestamp\xcbA\xd7\xaa1q\x85\xb5\x14\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:09:42,101:root:b'62' 1588118982087
+2020-04-28 17:09:45,456:mm_modules.pyudp:Received buffer: b'62'.
+2020-04-28 17:09:45,457:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event62\xa9timestamp\xcbA\xd7\xaa1r]H\x1f\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:09:45,472:root:b'62' 1588118985457
+2020-04-28 17:09:51,245:mm_modules.pyudp:Received buffer: b'63'.
+2020-04-28 17:09:51,252:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event63\xa9timestamp\xcbA\xd7\xaa1s\xd0\x1a\x87\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:09:51,257:root:b'63' 1588118991245
+2020-04-28 17:09:54,315:mm_modules.pyudp:Received buffer: b'63'.
+2020-04-28 17:09:54,317:mm_modules.pupilsocket:Payload sent: b"\x86\xa7subject\xaaannotation\xa5label\xa7Event63\xa9timestamp\xcbA\xd7\xaa1t\x94L'\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3"
+2020-04-28 17:09:54,326:root:b'63' 1588118994315
+2020-04-28 17:09:55,548:mm_modules.pyudp:Received buffer: b'64'.
+2020-04-28 17:09:55,550:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event64\xa9timestamp\xcbA\xd7\xaa1t\xe30\xa0\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:09:55,558:root:b'64' 1588118995548
+2020-04-28 17:09:58,607:mm_modules.pyudp:Received buffer: b'64'.
+2020-04-28 17:09:58,612:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event64\xa9timestamp\xcbA\xd7\xaa1u\xa7"\xda\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:09:58,623:root:b'64' 1588118998607
+2020-04-28 17:09:59,882:mm_modules.pyudp:Received buffer: b'65'.
+2020-04-28 17:09:59,888:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event65\xa9timestamp\xcbA\xd7\xaa1u\xf8\x8d\x05\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:09:59,899:root:b'65' 1588118999883
+2020-04-28 17:10:03,098:mm_modules.pyudp:Received buffer: b'65'.
+2020-04-28 17:10:03,101:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event65\xa9timestamp\xcbA\xd7\xaa1v\xc6w%\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:10:03,104:root:b'65' 1588119003098
+2020-04-28 17:10:04,103:mm_modules.pyudp:Received buffer: b'66'.
+2020-04-28 17:10:04,104:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event66\xa9timestamp\xcbA\xd7\xaa1w\x06\xae-\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:10:04,107:root:b'66' 1588119004103
+2020-04-28 17:10:07,365:mm_modules.pyudp:Received buffer: b'66'.
+2020-04-28 17:10:07,367:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event66\xa9timestamp\xcbA\xd7\xaa1w\xd7u\x81\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:10:07,381:root:b'66' 1588119007366
+2020-04-28 17:10:08,712:mm_modules.pyudp:Received buffer: b'67'.
+2020-04-28 17:10:08,712:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event67\xa9timestamp\xcbA\xd7\xaa1x-\x95c\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:10:08,740:root:b'67' 1588119008712
+2020-04-28 17:10:12,457:mm_modules.pyudp:Received buffer: b'67'.
+2020-04-28 17:10:12,459:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event67\xa9timestamp\xcbA\xd7\xaa1y\x1db\x95\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:10:12,468:root:b'67' 1588119012457
+2020-04-28 17:10:13,775:mm_modules.pyudp:Received buffer: b'68'.
+2020-04-28 17:10:13,777:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event68\xa9timestamp\xcbA\xd7\xaa1yq\xafG\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:10:13,812:root:b'68' 1588119013775
+2020-04-28 17:10:16,884:mm_modules.pyudp:Received buffer: b'68'.
+2020-04-28 17:10:16,886:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event68\xa9timestamp\xcbA\xd7\xaa1z8\xb7\x03\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:10:16,889:root:b'68' 1588119016884
+2020-04-28 17:10:18,090:mm_modules.pyudp:Received buffer: b'69'.
+2020-04-28 17:10:18,092:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event69\xa9timestamp\xcbA\xd7\xaa1z\x85\xee\x10\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:10:18,095:root:b'69' 1588119018091
+2020-04-28 17:10:21,615:mm_modules.pyudp:Received buffer: b'69'.
+2020-04-28 17:10:21,617:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event69\xa9timestamp\xcbA\xd7\xaa1{gv2\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:10:21,686:root:b'69' 1588119021615
+2020-04-28 17:10:22,917:mm_modules.pyudp:Received buffer: b'70'.
+2020-04-28 17:10:22,918:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event70\xa9timestamp\xcbA\xd7\xaa1{\xba\xcb*\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:10:22,934:root:b'70' 1588119022917
+2020-04-28 17:10:26,081:mm_modules.pyudp:Received buffer: b'70'.
+2020-04-28 17:10:26,082:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event70\xa9timestamp\xcbA\xd7\xaa1|\x85I\x95\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:10:26,112:root:b'70' 1588119026081
+2020-04-28 17:10:27,058:mm_modules.pyudp:Received buffer: b'71'.
+2020-04-28 17:10:27,059:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event71\xa9timestamp\xcbA\xd7\xaa1|\xc3\xc8\xb4\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:10:27,060:root:b'71' 1588119027059
+2020-04-28 17:10:30,185:mm_modules.pyudp:Received buffer: b'71'.
+2020-04-28 17:10:30,186:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event71\xa9timestamp\xcbA\xd7\xaa1}\x8b\xe5)\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:10:30,188:root:b'71' 1588119030185
+2020-04-28 17:10:31,249:mm_modules.pyudp:Received buffer: b'72'.
+2020-04-28 17:10:31,250:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event72\xa9timestamp\xcbA\xd7\xaa1}\xd0\x00L\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:10:31,253:root:b'72' 1588119031249
+2020-04-28 17:10:34,537:mm_modules.pyudp:Received buffer: b'72'.
+2020-04-28 17:10:34,538:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event72\xa9timestamp\xcbA\xd7\xaa1~\xa2rD\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:10:34,556:root:b'72' 1588119034538
+2020-04-28 17:10:35,645:mm_modules.pyudp:Received buffer: b'73'.
+2020-04-28 17:10:35,646:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event73\xa9timestamp\xcbA\xd7\xaa1~\xe9Y2\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:10:35,649:root:b'73' 1588119035646
+2020-04-28 17:10:38,833:mm_modules.pyudp:Received buffer: b'73'.
+2020-04-28 17:10:38,835:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event73\xa9timestamp\xcbA\xd7\xaa1\x7f\xb5o\xb0\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:10:38,845:root:b'73' 1588119038833
+2020-04-28 17:10:39,878:mm_modules.pyudp:Received buffer: b'74'.
+2020-04-28 17:10:39,883:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event74\xa9timestamp\xcbA\xd7\xaa1\x7f\xf8W\xf4\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:10:39,885:root:b'74' 1588119039878
+2020-04-28 17:10:43,126:mm_modules.pyudp:Received buffer: b'74'.
+2020-04-28 17:10:43,127:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event74\xa9timestamp\xcbA\xd7\xaa1\x80\xc8"\xc0\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:10:43,129:root:b'74' 1588119043127
+2020-04-28 17:10:44,450:mm_modules.pyudp:Received buffer: b'75'.
+2020-04-28 17:10:44,451:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event75\xa9timestamp\xcbA\xd7\xaa1\x81\x1c\xe8\x9a\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:10:44,454:root:b'75' 1588119044450
+2020-04-28 17:10:48,180:mm_modules.pyudp:Received buffer: b'75'.
+2020-04-28 17:10:48,181:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event75\xa9timestamp\xcbA\xd7\xaa1\x82\x0b\x9f\xdc\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:10:48,194:root:b'75' 1588119048181
+2020-04-28 17:10:49,911:mm_modules.pyudp:Received buffer: b'76'.
+2020-04-28 17:10:49,912:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event76\xa9timestamp\xcbA\xd7\xaa1\x82za\xf6\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:10:49,917:root:b'76' 1588119049912
+2020-04-28 17:10:53,177:mm_modules.pyudp:Received buffer: b'76'.
+2020-04-28 17:10:53,179:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event76\xa9timestamp\xcbA\xd7\xaa1\x83K|g\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:10:53,181:root:b'76' 1588119053178
+2020-04-28 17:10:54,676:mm_modules.pyudp:Received buffer: b'77'.
+2020-04-28 17:10:54,678:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event77\xa9timestamp\xcbA\xd7\xaa1\x83\xabVX\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:10:54,703:root:b'77' 1588119054676
+2020-04-28 17:10:57,981:mm_modules.pyudp:Received buffer: b'77'.
+2020-04-28 17:10:57,984:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event77\xa9timestamp\xcbA\xd7\xaa1\x84\x7f\x03X\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:10:57,986:root:b'77' 1588119057982
+2020-04-28 17:10:59,175:mm_modules.pyudp:Received buffer: b'78'.
+2020-04-28 17:10:59,175:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event78\xa9timestamp\xcbA\xd7\xaa1\x84\xcb;\xb0\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:10:59,184:root:b'78' 1588119059175
+2020-04-28 17:11:02,370:mm_modules.pyudp:Received buffer: b'78'.
+2020-04-28 17:11:02,371:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event78\xa9timestamp\xcbA\xd7\xaa1\x85\x97\xc1f\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:11:02,377:root:b'78' 1588119062371
+2020-04-28 17:11:03,605:mm_modules.pyudp:Received buffer: b'79'.
+2020-04-28 17:11:03,607:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event79\xa9timestamp\xcbA\xd7\xaa1\x85\xe6\xdb@\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:11:03,629:root:b'79' 1588119063605
+2020-04-28 17:11:06,920:mm_modules.pyudp:Received buffer: b'79'.
+2020-04-28 17:11:06,921:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event79\xa9timestamp\xcbA\xd7\xaa1\x86\xba\xfb3\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:11:06,946:root:b'79' 1588119066920
+2020-04-28 17:11:07,976:mm_modules.pyudp:Received buffer: b'80'.
+2020-04-28 17:11:07,977:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event80\xa9timestamp\xcbA\xd7\xaa1\x86\xfe\x83\xfd\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:11:08,038:root:b'80' 1588119067976
+2020-04-28 17:11:11,240:mm_modules.pyudp:Received buffer: b'80'.
+2020-04-28 17:11:11,241:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event80\xa9timestamp\xcbA\xd7\xaa1\x87\xcfv\xe6\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:11:11,304:root:b'80' 1588119071241
+2020-04-28 17:11:12,333:mm_modules.pyudp:Received buffer: b'81'.
+2020-04-28 17:11:12,335:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event81\xa9timestamp\xcbA\xd7\xaa1\x88\x15rq\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:11:12,357:root:b'81' 1588119072333
+2020-04-28 17:11:15,581:mm_modules.pyudp:Received buffer: b'81'.
+2020-04-28 17:11:15,582:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event81\xa9timestamp\xcbA\xd7\xaa1\x88\xe5>\xc5\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:11:15,595:root:b'81' 1588119075581
+2020-04-28 17:11:17,101:mm_modules.pyudp:Received buffer: b'82'.
+2020-04-28 17:11:17,104:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event82\xa9timestamp\xcbA\xd7\xaa1\x89F\xa9/\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:11:17,106:root:b'82' 1588119077101
+2020-04-28 17:11:20,395:mm_modules.pyudp:Received buffer: b'82'.
+2020-04-28 17:11:20,395:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event82\xa9timestamp\xcbA\xd7\xaa1\x8a\x19K\xf0\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:11:20,405:root:b'82' 1588119080395
+2020-04-28 17:11:21,926:mm_modules.pyudp:Received buffer: b'83'.
+2020-04-28 17:11:21,927:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event83\xa9timestamp\xcbA\xd7\xaa1\x8a{Sa\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:11:21,929:root:b'83' 1588119081926
+2020-04-28 17:11:25,052:mm_modules.pyudp:Received buffer: b'83'.
+2020-04-28 17:11:25,053:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event83\xa9timestamp\xcbA\xd7\xaa1\x8bCp\xd2\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:11:25,072:root:b'83' 1588119085053
+2020-04-28 17:11:26,475:mm_modules.pyudp:Received buffer: b'84'.
+2020-04-28 17:11:26,478:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event84\xa9timestamp\xcbA\xd7\xaa1\x8b\x9e\x80\xc3\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:11:26,481:root:b'84' 1588119086476
+2020-04-28 17:11:29,673:mm_modules.pyudp:Received buffer: b'84'.
+2020-04-28 17:11:29,674:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event84\xa9timestamp\xcbA\xd7\xaa1\x8ck&O\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:11:29,676:root:b'84' 1588119089674
+2020-04-28 17:11:31,040:mm_modules.pyudp:Received buffer: b'85'.
+2020-04-28 17:11:31,044:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event85\xa9timestamp\xcbA\xd7\xaa1\x8c\xc2\xb5\x03\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:11:31,045:root:b'85' 1588119091037
+2020-04-28 17:11:34,195:mm_modules.pyudp:Received buffer: b'85'.
+2020-04-28 17:11:34,197:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event85\xa9timestamp\xcbA\xd7\xaa1\x8d\x8c\x96\xe2\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:11:34,202:root:b'85' 1588119094196
+2020-04-28 17:11:35,467:mm_modules.pyudp:Received buffer: b'86'.
+2020-04-28 17:11:35,469:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event86\xa9timestamp\xcbA\xd7\xaa1\x8d\xde\r\x84\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:11:35,476:root:b'86' 1588119095468
+2020-04-28 17:11:38,669:mm_modules.pyudp:Received buffer: b'86'.
+2020-04-28 17:11:38,671:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event86\xa9timestamp\xcbA\xd7\xaa1\x8e\xaa\xf8\x12\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:11:38,739:root:b'86' 1588119098669
+2020-04-28 17:11:39,889:mm_modules.pyudp:Received buffer: b'87'.
+2020-04-28 17:11:39,890:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event87\xa9timestamp\xcbA\xd7\xaa1\x8e\xf8\xf60\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:11:39,940:root:b'87' 1588119099890
+2020-04-28 17:11:43,108:mm_modules.pyudp:Received buffer: b'87'.
+2020-04-28 17:11:43,109:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event87\xa9timestamp\xcbA\xd7\xaa1\x8f\xc6\xfc\xf0\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:11:43,123:root:b'87' 1588119103108
+2020-04-28 17:11:44,499:mm_modules.pyudp:Received buffer: b'88'.
+2020-04-28 17:11:44,500:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event88\xa9timestamp\xcbA\xd7\xaa1\x90 \x08\xdd\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:11:44,502:root:b'88' 1588119104499
+2020-04-28 17:11:47,609:mm_modules.pyudp:Received buffer: b'88'.
+2020-04-28 17:11:47,610:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event88\xa9timestamp\xcbA\xd7\xaa1\x90\xe7\n\x85\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:11:47,612:root:b'88' 1588119107609
+2020-04-28 17:11:48,607:mm_modules.pyudp:Received buffer: b'89'.
+2020-04-28 17:11:48,607:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event89\xa9timestamp\xcbA\xd7\xaa1\x91&\xe3&\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:11:48,609:root:b'89' 1588119108607
+2020-04-28 17:11:51,820:mm_modules.pyudp:Received buffer: b'89'.
+2020-04-28 17:11:51,823:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event89\xa9timestamp\xcbA\xd7\xaa1\x91\xf4\xb4\xb7\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:11:51,825:root:b'89' 1588119111821
+2020-04-28 17:11:53,185:mm_modules.pyudp:Received buffer: b'90'.
+2020-04-28 17:11:53,188:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event90\xa9timestamp\xcbA\xd7\xaa1\x92K\xed\xed\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:11:53,192:root:b'90' 1588119113185
+2020-04-28 17:11:56,360:mm_modules.pyudp:Received buffer: b'90'.
+2020-04-28 17:11:56,361:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event90\xa9timestamp\xcbA\xd7\xaa1\x93\x17\x1d\x08\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:11:56,366:root:b'90' 1588119116361
+2020-04-28 17:11:57,786:mm_modules.pyudp:Received buffer: b'91'.
+2020-04-28 17:11:57,790:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event91\xa9timestamp\xcbA\xd7\xaa1\x93r\x82\xd8\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:11:57,796:root:b'91' 1588119117787
+2020-04-28 17:12:01,007:mm_modules.pyudp:Received buffer: b'91'.
+2020-04-28 17:12:01,009:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event91\xa9timestamp\xcbA\xd7\xaa1\x94@\x97\xfa\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:12:01,041:root:b'91' 1588119121007
+2020-04-28 17:12:02,033:mm_modules.pyudp:Received buffer: b'92'.
+2020-04-28 17:12:02,035:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event92\xa9timestamp\xcbA\xd7\xaa1\x94\x82$c\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:12:02,040:root:b'92' 1588119122033
+2020-04-28 17:12:05,217:mm_modules.pyudp:Received buffer: b'92'.
+2020-04-28 17:12:05,221:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event92\xa9timestamp\xcbA\xd7\xaa1\x95M\xfc\xe7\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:12:05,259:root:b'92' 1588119125218
+2020-04-28 17:12:06,432:mm_modules.pyudp:Received buffer: b'93'.
+2020-04-28 17:12:06,432:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event93\xa9timestamp\xcbA\xd7\xaa1\x95\x9b\xaf\xa7\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:12:06,435:root:b'93' 1588119126432
+2020-04-28 17:12:09,558:mm_modules.pyudp:Received buffer: b'93'.
+2020-04-28 17:12:09,559:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event93\xa9timestamp\xcbA\xd7\xaa1\x96c\xc0;\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:12:09,567:root:b'93' 1588119129558
+2020-04-28 17:12:11,490:mm_modules.pyudp:Received buffer: b'94'.
+2020-04-28 17:12:11,494:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event94\xa9timestamp\xcbA\xd7\xaa1\x96\xdf\x9f\xc7\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:12:11,501:root:b'94' 1588119131490
+2020-04-28 17:12:14,873:mm_modules.pyudp:Received buffer: b'94'.
+2020-04-28 17:12:14,874:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event94\xa9timestamp\xcbA\xd7\xaa1\x97\xb7\xf4\x9d\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:12:14,877:root:b'94' 1588119134874
+2020-04-28 17:12:16,221:mm_modules.pyudp:Received buffer: b'95'.
+2020-04-28 17:12:16,221:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event95\xa9timestamp\xcbA\xd7\xaa1\x98\x0e+\x99\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:12:16,224:root:b'95' 1588119136221
+2020-04-28 17:12:19,615:mm_modules.pyudp:Received buffer: b'95'.
+2020-04-28 17:12:19,616:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event95\xa9timestamp\xcbA\xd7\xaa1\x98\xe7m\x93\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:12:19,676:root:b'95' 1588119139615
+2020-04-28 17:12:21,061:mm_modules.pyudp:Received buffer: b'96'.
+2020-04-28 17:12:21,062:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event96\xa9timestamp\xcbA\xd7\xaa1\x99C\xf4^\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:12:21,072:root:b'96' 1588119141061
+2020-04-28 17:12:24,488:mm_modules.pyudp:Received buffer: b'96'.
+2020-04-28 17:12:24,489:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event96\xa9timestamp\xcbA\xd7\xaa1\x9a\x1fI\x7f\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:12:24,499:root:b'96' 1588119144488
+2020-04-28 17:12:26,092:mm_modules.pyudp:Received buffer: b'97'.
+2020-04-28 17:12:26,094:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event97\xa9timestamp\xcbA\xd7\xaa1\x9a\x86\x0eZ\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:12:26,098:root:b'97' 1588119146093
+2020-04-28 17:12:29,294:mm_modules.pyudp:Received buffer: b'97'.
+2020-04-28 17:12:29,295:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event97\xa9timestamp\xcbA\xd7\xaa1\x9bR\xe7.\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:12:29,297:root:b'97' 1588119149295
+2020-04-28 17:12:30,541:mm_modules.pyudp:Received buffer: b'98'.
+2020-04-28 17:12:30,542:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event98\xa9timestamp\xcbA\xd7\xaa1\x9b\xa2\xb7\xbf\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:12:30,547:root:b'98' 1588119150541
+2020-04-28 17:12:33,839:mm_modules.pyudp:Received buffer: b'98'.
+2020-04-28 17:12:33,842:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event98\xa9timestamp\xcbA\xd7\xaa1\x9cu\xe3\x19\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:12:33,870:root:b'98' 1588119153839
+2020-04-28 17:12:35,130:mm_modules.pyudp:Received buffer: b'99'.
+2020-04-28 17:12:35,134:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event99\xa9timestamp\xcbA\xd7\xaa1\x9c\xc8\x88r\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:12:35,149:root:b'99' 1588119155130
+2020-04-28 17:12:38,426:mm_modules.pyudp:Received buffer: b'99'.
+2020-04-28 17:12:38,428:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa7Event99\xa9timestamp\xcbA\xd7\xaa1\x9d\x9b]\xa6\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:12:38,430:root:b'99' 1588119158426
+2020-04-28 17:12:39,524:mm_modules.pyudp:Received buffer: b'100'.
+2020-04-28 17:12:39,525:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa8Event100\xa9timestamp\xcbA\xd7\xaa1\x9d\xe1\x9e\x88\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:12:39,545:root:b'100' 1588119159524
+2020-04-28 17:12:42,717:mm_modules.pyudp:Received buffer: b'100'.
+2020-04-28 17:12:42,720:mm_modules.pupilsocket:Payload sent: b'\x86\xa7subject\xaaannotation\xa5label\xa8Event100\xa9timestamp\xcbA\xd7\xaa1\x9e\xad\xf8{\xa8duration\xcb\x00\x00\x00\x00\x00\x00\x00\x00\xa6source\xb2homelabs framework\xa6record\xc3'
+2020-04-28 17:12:42,729:root:b'100' 1588119162717
